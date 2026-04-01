@@ -53,19 +53,23 @@ function renderModalCarousel(index) {
 
     carouselContainer.innerHTML = '';
     
-    const leftArrow = document.createElement('span');
-    leftArrow.className = 'carousel-arrow left';
-    leftArrow.innerHTML = '&lt;';
-    leftArrow.onclick = prevModalMedia;
-    
-    const rightArrow = document.createElement('span');
-    rightArrow.className = 'carousel-arrow right';
-    rightArrow.innerHTML = '&gt;';
-    rightArrow.onclick = nextModalMedia;
+    if (mediaNodes.length > 1) {
+        const leftArrow = document.createElement('span');
+        leftArrow.className = 'carousel-arrow left';
+        leftArrow.innerHTML = '&lt;';
+        leftArrow.onclick = prevModalMedia;
+        
+        const rightArrow = document.createElement('span');
+        rightArrow.className = 'carousel-arrow right';
+        rightArrow.innerHTML = '&gt;';
+        rightArrow.onclick = nextModalMedia;
 
-    carouselContainer.appendChild(leftArrow);
-    carouselContainer.appendChild(activeMedia);
-    carouselContainer.appendChild(rightArrow);
+        carouselContainer.appendChild(leftArrow);
+        carouselContainer.appendChild(activeMedia);
+        carouselContainer.appendChild(rightArrow);
+    } else {
+        carouselContainer.appendChild(activeMedia);
+    }
 }
 
 function prevModalMedia(e) {

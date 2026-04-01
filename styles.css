@@ -75,7 +75,7 @@ h6 {
 }
 
 .section-padding {
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .bg-dark {
@@ -147,11 +147,13 @@ h6 {
   display: inline-flex;
   align-items: center;
   margin-top: auto;
-  padding-top: 20px;
+  padding-top: 15px;
   font-size: 1.05rem;
+  transition: var(--transition);
 }
 
-.btn-link:hover {
+.btn-link:hover,
+.service-card:hover .btn-link {
   color: var(--dark-blue);
   transform: translateX(5px);
 }
@@ -391,7 +393,7 @@ h6 {
 /* Hero Section */
 .hero {
   padding-top: 160px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   display: flex;
   align-items: center;
   gap: 60px;
@@ -473,7 +475,7 @@ h6 {
 
 /* Video Section */
 .video-section {
-  padding-bottom: 120px;
+  padding-bottom: 70px;
 }
 
 .video-container {
@@ -508,14 +510,14 @@ h6 {
 
 /* Who We Are Section */
 .who-we-are {
-  padding: 140px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
 
 .who-header {
   max-width: 800px;
-  margin: 0 auto 80px;
+  margin: 0 auto 50px;
   text-align: center;
 }
 
@@ -579,7 +581,7 @@ h6 {
   display: flex;
   align-items: center;
   gap: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .success-header .section-title {
@@ -814,7 +816,7 @@ h6 {
 /* Services Section */
 .services-header {
   max-width: 1000px;
-  margin: 0 auto 80px;
+  margin: 0 auto 50px;
 }
 
 .services-header .section-title {
@@ -838,6 +840,7 @@ h6 {
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.04);
+  text-decoration: none;
 }
 
 .service-card:hover {
@@ -848,7 +851,7 @@ h6 {
 
 .service-img-placeholder {
   width: 100%;
-  height: 280px;
+  height: 220px;
   background: var(--light-gray);
   display: flex;
   align-items: center;
@@ -870,42 +873,42 @@ h6 {
 }
 
 .service-content {
-  padding: 45px;
+  padding: 30px 30px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
 .service-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--dark-blue);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .service-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .service-text {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--text-dark);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   opacity: 0.85;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .service-list {
   list-style: none;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .service-list li {
   position: relative;
   padding-left: 28px;
-  margin-bottom: 12px;
-  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
   color: var(--text-dark);
   font-weight: 500;
 }
