@@ -43,7 +43,72 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
+    // Auto-assign sequential stagger delays to value cards by DOM order
+    document.querySelectorAll('.values-grid .value-card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 100}ms`;
+    });
+
     document.querySelectorAll('.fade-in-up').forEach((el) => {
         observer.observe(el);
     });
+
+    // === References Carousel – Drag to scroll ===
+    const wrapper = document.querySelector('.references-track-wrapper');
+    const track   = document.querySelector('.references-track');
+
+    if (wrapper && track) {
+        let isDragging  = false;
+        let startX      = 0;
+        let scrollLeft  = 0;
+
+        const pauseAnim  = () => { track.style.animationPlayState = 'paused'; };
+        const resumeAnim = () => { track.style.animationPlayState = 'running'; };
+
+        // ── Mouse events ──────────────────────────────────────────
+        wrapper.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            wrapper.style.cursor = 'grabbing';
+            startX     = e.pageX - wrapper.offsetLeft;
+            scrollLeft = wrapper.scrollLeft;
+            pauseAnim();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x    = e.pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            wrapper.scrollLeft = scrollLeft - walk;
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            wrapper.style.cursor = 'grab';
+            resumeAnim();
+        });
+
+        // ── Touch events ──────────────────────────────────────────
+        wrapper.addEventListener('touchstart', (e) => {
+            startX     = e.touches[0].pageX - wrapper.offsetLeft;
+            scrollLeft = wrapper.scrollLeft;
+            pauseAnim();
+        }, { passive: true });
+
+        wrapper.addEventListener('touchmove', (e) => {
+            const x    = e.touches[0].pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 1.2;
+            wrapper.scrollLeft = scrollLeft - walk;
+        }, { passive: true });
+
+        wrapper.addEventListener('touchend', resumeAnim);
+
+        // Prevent browser default image drag
+        track.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', e => e.preventDefault());
+        });
+
+        wrapper.style.cursor = 'grab';
+    }
 });
+
