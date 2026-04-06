@@ -101,3 +101,65 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+// Language Switcher Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const langPref = localStorage.getItem('preferredLang');
+    const currentPath = window.location.pathname;
+    const isSpanishPage = currentPath.includes('/es/');
+
+    // 1. Auto-detection (only if no preference is saved)
+    if (!langPref) {
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.startsWith('es') && !isSpanishPage) {
+            // Check if we are at root or specific page
+            let targetPath = '/es' + (currentPath === '/' ? '/index.html' : currentPath);
+            // Don't set preference yet, let them choose, or set it to auto-detect
+            // User requested: "Si el usuario entra por primera vez y su idioma es español, redirigir automáticamente"
+            localStorage.setItem('preferredLang', 'es');
+            window.location.href = targetPath;
+        }
+    }
+
+    // 2. UI Updates (Active state)
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+        const lang = btn.getAttribute('data-lang');
+        if ((lang === 'es' && isSpanishPage) || (lang === 'en' && !isSpanishPage)) {
+            btn.classList.add('active');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = btn.getAttribute('data-lang');
+            localStorage.setItem('preferredLang', selectedLang);
+
+            let newPath;
+            if (selectedLang === 'es' && !isSpanishPage) {
+                // To Spanish: insert /es/ before the filename
+                const pathParts = currentPath.split('/');
+                const fileName = pathParts[pathParts.length - 1] || 'index.html';
+                newPath = '/es/' + fileName;
+            } else if (selectedLang === 'en' && isSpanishPage) {
+                // To English: remove /es/
+                newPath = currentPath.replace('/es/', '/');
+            }
+
+            if (newPath) {
+                window.location.href = newPath;
+            }
+        });
+    });
+
+    // Mobile globe icon toggle logic (if needed to show a simple menu or just toggle)
+    const mobileGlobe = document.getElementById('mobileLangToggle');
+    if (mobileGlobe) {
+        mobileGlobe.addEventListener('click', () => {
+            // For a simple toggle between EN and ES
+            const targetLang = isSpanishPage ? 'en' : 'es';
+            localStorage.setItem('preferredLang', targetLang);
+            let newPath = isSpanishPage ? currentPath.replace('/es/', '/') : '/es' + (currentPath === '/' ? '/index.html' : currentPath);
+            window.location.href = newPath;
+        });
+    }
+});

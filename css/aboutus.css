@@ -377,11 +377,23 @@
     text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
-/* Make markers scale nicely on smaller screens */
 @media (max-width: 768px) {
+    .about-presence .presence-text {
+        margin: 20px auto 10px auto;
+        font-size: 1.1rem;
+    }
+
+    .presence-logo {
+        display: none; /* Removes the large logo that was pushing the map down */
+    }
+
+    .interactive-map-container {
+        margin-top: 0;
+    }
+
     .map-viewport {
-        padding-top: 60%;
-        /* Show more map on mobile */
+        padding-top: 0;
+        min-height: auto;
     }
 
     .map-marker {
@@ -481,7 +493,30 @@
 
 @media (max-width: 768px) {
     .history-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .history-images {
+        order: 2;
+        height: auto;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin: 30px auto 0 auto;
+        width: 100%;
+    }
+
+    .history-img {
+        position: static !important;
+        width: 28% !important;
+        max-width: 120px;
+        height: auto !important;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        transform: none !important;
+        border-radius: 12px !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .values-grid {

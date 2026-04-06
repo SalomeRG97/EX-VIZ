@@ -1,4 +1,4 @@
-/* Service 3 specific JS - Handles Modal data injection */
+/* Shared services detail page JS */
 
 function openSpecModal(index) {
     const dataSource = document.getElementById(`popup-content-${index}`);
@@ -11,7 +11,7 @@ function openSpecModal(index) {
     currentMediaIndex = 0; // Reset
     renderModalCarousel(index);
 
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
     // Give browser time to load massive video elements into DOM before animating
     setTimeout(() => {
@@ -20,10 +20,14 @@ function openSpecModal(index) {
 }
 
 function closeSpecModal() {
-    document.getElementById('specModal').classList.remove('active');
+    const modal = document.getElementById('specModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
     document.body.style.overflow = '';
 }
 
+// Close on background click
 window.addEventListener('click', (e) => {
     const modal = document.getElementById('specModal');
     if (e.target === modal) {
