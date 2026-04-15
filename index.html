@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/media/logoex-viz.png" type="image/png">
+    <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
+    <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
 <body>
@@ -21,11 +21,11 @@
     <header class="header" id="header">
         <div class="container navbar">
             <a href="/" class="logo-lockup">
-                <img src="/media/logoexviz.png" alt="EX-VIZ Logo" class="logo-main">
+                <img src="/media/logoexviz.webp" alt="EX-VIZ Logo" class="logo-main" loading="lazy">
                 <span class="logo-divider"></span>
                 <div class="logo-parent">
                     <span class="logo-caption">an EBEDIX company</span>
-                    <img src="/media/ebedix.png" alt="EBEDIX Logo" class="logo-ebedix">
+                    <img src="/media/ebedix.webp" alt="EBEDIX Logo" class="logo-ebedix" loading="lazy">
                 </div>
             </a>
             <nav class="nav-links">
@@ -111,7 +111,7 @@
         </div>
         <div class="hero-image">
             <div class="image-placeholder main-render">
-                <span><img src="/media/hero.png" alt="Rendering Studio">
+                <span><img src="/media/hero.webp" alt="Rendering Studio" loading="lazy">
                 </span>
             </div>
         </div>
@@ -124,7 +124,10 @@
             <div class="video-placeholder">
                 <span>[1920x1080 Autoplay Video Player]</span>
 
-                <video src="/media/hero.mp4" autoplay loop muted playsinline width="1920" height="1080"></video>
+                <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                    <source src="/media/hero.webm" type="video/webm">
+                    <source src="/media/hero.mp4" type="video/mp4">
+                </video>
 
             </div>
         </div>
@@ -136,7 +139,8 @@
             <div class="exviz-brand-row">
                 <!-- Col 1: Rectangular logo placeholder -->
                 <div class="exviz-col exviz-col-brand">
-                    <img src="/media/logoexviz.png" alt="EX-VIZ Logo" class="exviz-rect-logo" id="exviz-rect-logo">
+                    <img src="/media/logoexviz.webp" alt="EX-VIZ Logo" class="exviz-rect-logo" id="exviz-rect-logo"
+                        loading="lazy">
                 </div>
                 <!-- Col 2: Description -->
                 <div class="exviz-col exviz-col-desc">
@@ -176,24 +180,78 @@
     <!-- Success Case Section -->
     <section id="success-case" class="success-case section-padding bg-light-gray">
         <div class="container">
-            <div class="who-header" style="margin-bottom: 50px;">
-                <h2 class="section-title" style="color: var(--dark-blue);">Success Case</h2>
-            </div>
-
-            <div class="success-header">
-                <h3 class="section-title">Meraki Club & Residences</h3>
-                <div class="success-desc">
-                    <p>We transformed static 3D studio designs into an interactive, web‑based real estate digital twin,
-                        enabling active property sales through immersive visualization and streamlined digital
-                        engagement.</p>
+            <!-- 1. Top Video with Logo -->
+            <div class="video-container usecase-video-wrapper" style="position: relative; margin-bottom: 40px;">
+                <div class="video-placeholder">
+                    <span>[1920x1080 Success Case Header Video]</span>
+                    <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                        <source src="/media/meraki2.webm" type="video/webm">
+                        <source src="/media/meraki2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-overlay-logo">
+                    <img src="/media/useCase/meraki/logo.png" alt="Meraki Logo" loading="lazy">
                 </div>
             </div>
 
-            <div class="video-container success-video">
+            <!-- 2. Info Block 1 -->
+            <div class="usecase-info-block">
+                <div class="info-left">
+                    <p>Meraki Club & Residences, located in one of Cartagena’s most exclusive neighborhoods, redefines
+                        premium residential living with more than 160 units in a unique architectural structure.</p>
+                </div>
+                <div class="info-right">
+                    <div class="info-item"><strong>Location: </strong>Cartagena, Colombia</div>
+                    <div class="info-item"><strong>Developer: </strong>Grupo Valor</div>
+                    <div class="info-item"><strong>Construction: </strong>Convel</div>
+                    <div class="info-item"><strong>Investment Fund: </strong>Paladin Realty Partners</div>
+                    <div class="info-item"><strong>Project Services: </strong>Architectural CGI, Interior & Exterior
+                        Renderings, 360 Virtual Tour, 3D Floor Plan
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Current Video -->
+            <div class="video-container usecase-video-wrapper">
                 <div class="video-placeholder">
                     <span>[1920x1080 Success Case Video]</span>
-                    <video src="/media/meraki.mp4.mp4" autoplay loop muted playsinline width="1920"
-                        height="1080"></video>
+                    <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                        <source src="/media/meraki.webm" type="video/webm">
+                        <source src="/media/meraki.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- 4. Full Width Text (After the 3. Current Video) -->
+            <div class="usecase-full-text">
+                <p>Our EX-VIZ team transformed static 3D studio designs into an interactive, web-based real estate
+                    digital twin, enabling active property sales through immersive visualization and optimized digital
+                    engagement. Using Unreal Engine technology, we developed Real-Time Virtual Tours that offered buyers
+                    personalized experiences while exploring finishes, materials, and perspectives.</p>
+            </div>
+
+            <!-- 5. Split Block: Text Left, Image Right -->
+            <div class="usecase-split-block">
+                <div class="split-text">
+                    <p>From this model, we generated over 300 photorealistic CGI images, complemented by animations and
+                        precision drone photography. Each visual asset was crafted with advanced lighting and
+                        composition techniques, faithfully conveying Meraki’s refined aesthetic and luxury.</p>
+                </div>
+                <div class="split-image">
+                    <img src="/media/useCase/meraki/4.jpeg" alt="Meraki 1" loading="lazy">
+                </div>
+            </div>
+
+            <!-- 6. Split Block: Image Left, Text Right -->
+            <div class="usecase-split-block">
+                <div class="split-image">
+                    <img src="/media/useCase/meraki/2.webp" alt="Meraki 2" loading="lazy">
+                </div>
+                <div class="split-text">
+                    <p>To further elevate quality, we applied advanced path-tracing, achieving exceptional lighting
+                        realism that enhanced the project’s sophistication and commercial appeal. The result was an
+                        authentic and captivating representation that strengthened Meraki’s market positioning and
+                        delivered a world-class visual experience to investors and buyers.</p>
                 </div>
             </div>
         </div>
@@ -212,7 +270,7 @@
                 <!-- Service Card 1 -->
                 <a href="/renderingstudio" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/rendering.png" alt="Rendering Studio">
+                        <span> <img src="/media/rendering.webp" alt="Rendering Studio" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
@@ -233,7 +291,7 @@
                 <!-- Service Card 2 -->
                 <a href="/digitalsalestwin" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/digitalsales.png" alt="Rendering Studio">
+                        <span> <img src="/media/digitalsales.webp" alt="Rendering Studio" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
@@ -254,7 +312,7 @@
                 <!-- Service Card 3 -->
                 <a href="/immersivesalesexperience" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/immersive.png" alt="Rendering Studio">
+                        <span> <img src="/media/immersive.webp" alt="Rendering Studio" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
@@ -279,9 +337,7 @@
             <h2 class="cta-title text-white">Need help choosing the right solution?</h2>
             <p class="cta-desc text-light">Talk with our team and discover how digital experiences can accelerate your
                 sales.</p>
-            <a target="_blank"
-                href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
-                class="btn btn-primary btn-large">Request Demo</a>
+            <a href="/contact" class="btn btn-primary btn-large">Discuss your project</a>
         </div>
     </section>
 
@@ -291,17 +347,17 @@
             <!-- Column 1: Logo & Social -->
             <div class="footer-col brand-col">
                 <a href="/" class="footer-logo">
-                    <img src="/media/logoex-viz.png" alt="EX-VIZ Logo">
+                    <img src="/media/logoex-viz.webp" alt="EX-VIZ Logo" loading="lazy">
                 </a>
                 <p class="brand-name">EX-VIZ</p>
                 <div class="social-links">
-                    <a href="#" target="_blank" aria-label="LinkedIn">
+                    <a href="javascript:void(0)" aria-label="LinkedIn" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
-                    <a href="#" target="_blank" aria-label="YouTube">
+                    <a href="javascript:void(0)" aria-label="YouTube" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -380,9 +436,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js?v=1.0.0"></script>
 </body>
 
 </html>
-
-

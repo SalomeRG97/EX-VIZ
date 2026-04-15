@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Hoja de estilos principal -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="icon" href="/media/logoex-viz.png" type="image/png">
+    <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
+    <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
 <body>
@@ -21,21 +21,20 @@
     <header class="header" id="header">
         <div class="container navbar">
             <a href="/es/" class="logo-lockup">
-                <img src="/media/logoexviz.png" alt="Logo EX-VIZ" class="logo-main">
+                <img src="/media/logoexviz.webp" alt="Logo EX-VIZ" class="logo-main" loading="lazy">
                 <span class="logo-divider"></span>
                 <div class="logo-parent">
                     <span class="logo-caption">una empresa de EBEDIX</span>
-                    <img src="/media/ebedix.png" alt="Logo EBEDIX" class="logo-ebedix">
+                    <img src="/media/ebedix.webp" alt="Logo EBEDIX" class="logo-ebedix" loading="lazy">
                 </div>
             </a>
             <nav class="nav-links">
                 <div class="nav-dropdown">
                     <span class="dropdown-toggle">Servicios</span>
                     <div class="dropdown-menu">
-                        <a href="/es/renderingstudio">Servicios del Estudio de Renders y Arquitectura Digital</a>
-                        <a href="/es/digitalsalestwin">Servicios de la Plataforma de Gemelos Digitales Inmobiliarios</a>
-                        <a href="/es/immersivesalesexperience">Servicios de Showrooms Digitales Interactivos de Última
-                            Generación</a>
+                        <a href="/es/renderingstudio">Estudio de Renders y Arquitectura Digital</a>
+                        <a href="/es/digitalsalestwin">Plataforma de Gemelos Digitales Inmobiliarios</a>
+                        <a href="/es/immersivesalesexperience">Showrooms Digitales Interactivos de Última Generación</a>
                     </div>
                 </div>
                 <div class="nav-dropdown">
@@ -49,7 +48,7 @@
                 </div>
 
                 <div class="push-right">
-                    <a href="/es/careers">Vacantes</a>
+                    <a href="/es/careers">Empleos</a>
                     <a href="/es/sustainability">Sostenibilidad</a>
                     <a target="_blank"
                         href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
@@ -73,10 +72,9 @@
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header">Servicios</div>
-                <a href="/es/renderingstudio">Servicios del Estudio de Renders y Arquitectura Digital</a>
-                <a href="/es/digitalsalestwin">Servicios de la Plataforma de Gemelos Digitales Inmobiliarios</a>
-                <a href="/es/immersivesalesexperience">Servicios de Showrooms Digitales Interactivos de Última
-                    Generación</a>
+                <a href="/es/renderingstudio">Estudio de Renders y Arquitectura Digital</a>
+                <a href="/es/digitalsalestwin">Plataforma de Gemelos Digitales Inmobiliarios</a>
+                <a href="/es/immersivesalesexperience">Showrooms Digitales Interactivos de Última Generación</a>
             </div>
             <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header">Empresa</div>
@@ -87,7 +85,7 @@
             </div>
             <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header"><a href="/es/careers"
-                        style="color: inherit; text-decoration: none;">Vacantes</a></div>
+                        style="color: inherit; text-decoration: none;">Empleos</a></div>
             </div>
             <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header"><a href="/es/sustainability"
@@ -102,18 +100,20 @@
     <!-- Primera Sección: Hero -->
     <section class="hero container">
         <div class="hero-content">
-            <h1 class="hero-title">Venda proyectos inmobiliarios <br><span class="highlight-blue">antes de que se
-                    construyan.</span></h1>
-            <p class="hero-subtitle">Gemelos digitales, showrooms virtuales y experiencias inmersivas que aceleran
-                las preventas y mejoran la confianza del comprador.</p>
+            <h1 class="hero-title" style="font-size: clamp(3rem, 4vw, 4rem);">Un puente entre tu visión y
+                la realidad<br><span class="highlight-blue">con impacto
+                    comercial inmediato.</span></h1>
+            <p class="hero-subtitle">El futuro inmobiliario en sus manos: gemelos digitales, showrooms virtuales y
+                experiencias inmersivas que posicionan sus proyectos en audiencias globales, aumentan las ventas y
+                reducen costos.</p>
             <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Ver Servicios</a>
-                <a href="#success-case" class="btn btn-outline">Ver Casos de Uso</a>
+                <a href="#services" class="btn btn-primary">Servicios</a>
+                <a href="#success-case" class="btn btn-outline">Casos de Éxito</a>
             </div>
         </div>
         <div class="hero-image">
             <div class="image-placeholder main-render">
-                <span><img src="/media/hero.png" alt="Estudio de Rendering">
+                <span><img src="/media/hero.webp" alt="Estudio de Rendering" loading="lazy">
                 </span>
             </div>
         </div>
@@ -124,7 +124,10 @@
         <div class="video-container">
             <div class="video-placeholder">
                 <span>[Reproductor de Video 1920x1080]</span>
-                <video src="/media/heroes.mp4" autoplay loop muted playsinline width="1920" height="1080"></video>
+                <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                    <source src="/media/heroes.webm" type="video/webm">
+                    <source src="/media/heroes.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -134,12 +137,14 @@
         <div class="container">
             <div class="exviz-brand-row">
                 <div class="exviz-col exviz-col-brand">
-                    <img src="/media/logoexviz.png" alt="Logo EX-VIZ" class="exviz-rect-logo" id="exviz-rect-logo">
+                    <img src="/media/logoexviz.webp" alt="Logo EX-VIZ" class="exviz-rect-logo" id="exviz-rect-logo"
+                        loading="lazy">
                 </div>
                 <div class="exviz-col exviz-col-desc">
-                    <p class="exviz-brand-desc text-light">Somos pioneros en visualización inmobiliaria interactiva,
-                        transformando la forma en que se presentan y venden los futuros desarrollos a través de
-                        experiencias digitales de vanguardia.</p>
+                    <p class="exviz-brand-desc text-light">Somos líderes en gestión inmobiliaria interactiva,
+                        redefiniendo la manera en que se visualizan y comercializan los proyectos con tecnologías
+                        digitales de vanguardia. Soluciones estéticas para diseñadores, inversionistas y
+                        gestores comerciales, que elevan tus proyectos y potencian tus ventas.</p>
                 </div>
             </div>
 
@@ -155,14 +160,14 @@
                 <div class="stat-card">
                     <h3 class="stat-number text-blue">40+</h3>
                     <h4 class="stat-title">Desarrollos</h4>
-                    <p class="stat-desc">Proyectos inmobiliarios exitosos en cuatro continentes hechos realidad a través
+                    <p class="stat-desc">Proyectos exitosos en cuatro continentes hechos realidad a través
                         de nuestra tecnología inmersiva.</p>
                 </div>
                 <!-- Stat 3 -->
                 <div class="stat-card">
                     <h3 class="stat-number text-green">$2B+</h3>
-                    <h4 class="stat-title">Impacto en Ventas</h4>
-                    <p class="stat-desc">En valor de preventas aceleradas generado para nuestros socios desarrolladores
+                    <h4 class="stat-title">Aumento en Ventas</h4>
+                    <p class="stat-desc">Generación y acelaración a través de canales digitales en proyectos
                         inmobiliarios.</p>
                 </div>
             </div>
@@ -172,24 +177,80 @@
     <!-- Sección Caso de Éxito -->
     <section id="success-case" class="success-case section-padding bg-light-gray">
         <div class="container">
-            <div class="who-header" style="margin-bottom: 50px;">
-                <h2 class="section-title" style="color: var(--dark-blue);">Caso de Éxito</h2>
-            </div>
-
-            <div class="success-header">
-                <h3 class="section-title">Meraki Club & Residences</h3>
-                <div class="success-desc">
-                    <p>Transformamos diseños de estudio 3D estáticos en un gemelo digital inmobiliario interactivo
-                        basado en la web, permitiendo ventas activas de propiedades a través de visualización inmersiva
-                        y un compromiso digital optimizado.</p>
+            <!-- 1. Top Video with Logo -->
+            <div class="video-container usecase-video-wrapper" style="position: relative; margin-bottom: 40px;">
+                <div class="video-placeholder">
+                    <span>[Video Caso de Éxito Top 1920x1080]</span>
+                    <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                        <source src="/media/meraki2.webm" type="video/webm">
+                        <source src="/media/meraki2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="video-overlay-logo">
+                    <img src="/media/useCase/meraki/logo.png" alt="Meraki Logo" loading="lazy">
                 </div>
             </div>
 
-            <div class="video-container success-video">
+            <!-- 2. Info Block 1 -->
+            <div class="usecase-info-block">
+                <div class="info-left">
+                    <p>Meraki Club & Residences, ubicado en uno de los vecindarios más exclusivos de Cartagena, redefine
+                        la vida residencial premium con más de 160 unidades en una estructura arquitectónica única.</p>
+                </div>
+                <div class="info-right">
+                    <div class="info-item"><strong>Ubicación: </strong>Cartagena, Colombia</div>
+                    <div class="info-item"><strong>Desarrollo y promoción: </strong>Grupo Valor</div>
+                    <div class="info-item"><strong>Constructora: </strong>Convel</div>
+                    <div class="info-item"><strong>Fondo de Inversión: </strong>Paladin Realty Partners</div>
+                    <div class="info-item"><strong>Proyecto: </strong>Renderizado Hiperrealista de Interiores y
+                        Exteriores, Arquitectura Digital CGI, Tour Virtual 360° Inmobiliario, Planos Interactivos.</div>
+                </div>
+            </div>
+
+            <!-- 3. Current Video -->
+            <div class="video-container usecase-video-wrapper">
                 <div class="video-placeholder">
                     <span>[Video Caso de Éxito 1920x1080]</span>
-                    <video src="/media/merakies.mp4.mp4" autoplay loop muted playsinline width="1920"
-                        height="1080"></video>
+                    <video autoplay loop muted playsinline preload="none" width="1920" height="1080" class="bg-video">
+                        <source src="/media/merakies.webm" type="video/webm">
+                        <source src="/media/merakies.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- 4. Full Width Text (After the 3. Current Video) -->
+            <div class="usecase-full-text">
+                <p>Nuestro equipo de EX-VIZ transformó diseños de estudio 3D estáticos en un gemelo digital
+                    inmobiliario interactivo basado en la web, permitiendo ventas activas de propiedades mediante
+                    visualización inmersiva y un compromiso digital optimizado. Con tecnología de Unreal Engine,
+                    desarrollamos Recorridos Virtuales en Tiempo Real que ofrecieron a los compradores experiencias
+                    personalizadas al explorar acabados, materiales y perspectivas.</p>
+            </div>
+
+            <!-- 5. Split Block: Text Left, Image Right -->
+            <div class="usecase-split-block">
+                <div class="split-text">
+                    <p>De este modelo generamos más de 300 imágenes CGI fotorrealistas, junto con animaciones y
+                        fotografía aérea de precisión. Cada recurso visual fue elaborado con técnicas avanzadas de
+                        iluminación y composición, transmitiendo fielmente la estética refinada y el lujo de Meraki.</p>
+                </div>
+                <div class="split-image">
+                    <img src="/media/useCase/meraki/4.jpeg" alt="Meraki 1" loading="lazy">
+                </div>
+            </div>
+
+            <!-- 6. Split Block: Image Left, Text Right -->
+            <div class="usecase-split-block">
+                <div class="split-image">
+                    <img src="/media/useCase/meraki/2.webp" alt="Meraki 2" loading="lazy">
+                </div>
+                <div class="split-text">
+                    <p>Para elevar aún más la calidad, aplicamos path-tracing avanzado, logrando un realismo lumínico
+                        excepcional que potenció la sofisticación y atractivo comercial del proyecto, ofreciendo a
+                        inversionistas y compradores una experiencia visual de clase mundial.</p>
+                    <p>El resultado fue una representación auténtica y cautivadora que potencia el atractivo comercial
+                        del proyecto y ofrece a inversionistas y compradores una experiencia visual de clase mundial.
+                    </p>
                 </div>
             </div>
         </div>
@@ -200,19 +261,21 @@
         <div class="container">
             <div class="who-header">
                 <h2 class="section-title" style="color: var(--dark-blue);">Nuestros Servicios</h2>
-                <p class="section-desc" style="color: var(--text-dark);">EX-VIZ transforma desarrollos en experiencias
-                    digitales interactivas,<br>listos para vender desde el primer día.</p>
+                <p class="section-desc" style="color: var(--text-dark);">Transformamos proyectos inmobiliarios en
+                    experiencias
+                    digitales interactivas,
+                    que potencian las ventas desde el primer día.</p>
             </div>
 
             <div class="services-grid">
                 <!-- Service Card 1 -->
                 <a href="/es/renderingstudio" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/rendering.png" alt="Estudio de Rendering">
+                        <span> <img src="/media/rendering.webp" alt="Estudio de Rendering" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Servicios del Servicios del Estudio de Renders y Arquitectura Digital
+                        <h3 class="service-title">Estudio de Renders y Arquitectura Digital
                         </h3>
                         <h4 class="service-subtitle text-blue">Creando proyectos visuales.</h4>
                         <p class="service-text">Renders 3D fotorrealistas y modelos 360° georreferenciados, alineados
@@ -229,15 +292,15 @@
                 <!-- Service Card 2 -->
                 <a href="/es/digitalsalestwin" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/digitalsales.png" alt="Gemelo Digital">
+                        <span> <img src="/media/digitalsales.webp" alt="Gemelo Digital" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Servicios de la Servicios de la Plataforma de Gemelos Digitales
-                            Inmobiliarios</h3>
+                        <h3 class="service-title">Plataforma de Gemelos Digitales Inmobiliarios</h3>
                         <h4 class="service-subtitle text-blue">Venda de forma más inteligente y rápida.</h4>
-                        <p class="service-text">Nuestro Gemelo Digital de Ventas, una plataforma basada en la web,
-                            conecta experiencias 3D inmersivas con datos de inventario y precios en vivo.</p>
+                        <p class="service-text">Nuestra Plataforma de Ventas hiper-fotorrealista con diseños 3D y
+                            experiencias web interactivas, conecta recorridos inmersivos con inventario y precios en
+                            tiempo real.</p>
                         <ul class="service-list">
                             <li>Inventario, precios y disponibilidad en tiempo real.</li>
                             <li>Exploración 3D interactiva que simplifica decisiones de compra.</li>
@@ -250,16 +313,16 @@
                 <!-- Service Card 3 -->
                 <a href="/es/immersivesalesexperience" class="service-card">
                     <div class="service-img-placeholder">
-                        <span> <img src="/media/immersive.png" alt="Experiencia Inmersiva">
+                        <span> <img src="/media/immersive.webp" alt="Experiencia Inmersiva" loading="lazy">
                         </span>
                     </div>
                     <div class="service-content">
-                        <h3 class="service-title">Servicios de Servicios de Showrooms Digitales Interactivos de Última
-                            Generación de Última Generación
+                        <h3 class="service-title">Showrooms Digitales Interactivos de Última Generación
                         </h3>
                         <h4 class="service-subtitle text-blue">Tecnología para showrooms físicos.</h4>
-                        <p class="service-text">Pantallas táctiles de gran formato y configuraciones de VR para su
-                            galería de ventas física.</p>
+                        <p class="service-text">Tecnologías XR de última generación como pantallas táctiles de gran
+                            formato y entornos inmersivos para transformar galerías de ventas físicas en experiencias
+                            digitales avanzadas.</p>
                         <ul class="service-list">
                             <li>Software para pantallas táctiles 4K.</li>
                             <li>Experiencias basadas en XR.</li>
@@ -275,11 +338,10 @@
     <section class="cta section-padding bg-dark center-text">
         <div class="container">
             <h2 class="cta-title text-white">¿Necesita ayuda para elegir la solución adecuada?</h2>
-            <p class="cta-desc text-light">Hable con nuestro equipo y descubra cómo las experiencias digitales pueden
-                acelerar sus ventas.</p>
-            <a target="_blank"
-                href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
-                class="btn btn-primary btn-large">Solicitar Demo</a>
+            <p class="cta-desc text-light">Conectate con nuestro equipo y descubra cómo las experiencias digitales
+                pueden
+                acelerar tus ventas.</p>
+            <a href="/es/contact" class="btn btn-primary btn-large">¿Tienes un proyecto en mente?</a>
         </div>
     </section>
 
@@ -288,17 +350,17 @@
         <div class="container footer-grid">
             <div class="footer-col brand-col">
                 <a href="/es/" class="footer-logo">
-                    <img src="/media/logoex-viz.png" alt="Logo EX-VIZ">
+                    <img src="/media/logoex-viz.webp" alt="Logo EX-VIZ" loading="lazy">
                 </a>
                 <p class="brand-name">EX-VIZ</p>
                 <div class="social-links">
-                    <a href="#" target="_blank" aria-label="LinkedIn">
+                    <a href="javascript:void(0)" aria-label="LinkedIn" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
-                    <a href="#" target="_blank" aria-label="YouTube">
+                    <a href="javascript:void(0)" aria-label="YouTube" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -375,7 +437,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/script.js"></script>
+    <script src="/js/script.js?v=1.0.0"></script>
 </body>
 
 </html>

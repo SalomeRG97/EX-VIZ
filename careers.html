@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Main styles -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
     <!-- Page specific styles -->
-    <link rel="stylesheet" href="/css/careers.css">
-    <link rel="icon" href="/media/logoex-viz.png" type="image/png">
+    <link rel="stylesheet" href="/css/careers.css?v=1.0.0">
+    <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
 <body>
@@ -22,11 +22,11 @@
     <header class="header" id="header">
         <div class="container navbar">
             <a href="/" class="logo-lockup">
-                <img src="/media/logoexviz.png" alt="EX-VIZ Logo" class="logo-main">
+                <img src="/media/logoexviz.webp" alt="EX-VIZ Logo" class="logo-main" loading="lazy">
                 <span class="logo-divider"></span>
                 <div class="logo-parent">
                     <span class="logo-caption">an EBEDIX company</span>
-                    <img src="/media/ebedix.png" alt="EBEDIX Logo" class="logo-ebedix">
+                    <img src="/media/ebedix.webp" alt="EBEDIX Logo" class="logo-ebedix" loading="lazy">
                 </div>
             </a>
             <nav class="nav-links">
@@ -85,10 +85,12 @@
                 <a href="/aboutus#presence">International Presence</a>
             </div>
             <div class="mobile-dropdown-group">
-                <div class="mobile-dropdown-header"><a href="/careers" style="color: inherit; text-decoration: none;">Careers</a></div>
+                <div class="mobile-dropdown-header"><a href="/careers"
+                        style="color: inherit; text-decoration: none;">Careers</a></div>
             </div>
             <div class="mobile-dropdown-group">
-                <div class="mobile-dropdown-header"><a href="/sustainability" style="color: inherit; text-decoration: none;">Sustainability</a></div>
+                <div class="mobile-dropdown-header"><a href="/sustainability"
+                        style="color: inherit; text-decoration: none;">Sustainability</a></div>
             </div>
             <a target="_blank"
                 href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
@@ -99,7 +101,10 @@
     <!-- Hero Section -->
     <section class="hero-careers">
         <!-- Background Video & Overlay -->
-        <video class="hero-video-bg" src="/media/careers/trabajaconnosotros.mp4" autoplay loop muted playsinline></video>
+        <video autoplay loop muted playsinline preload="none" class="bg-video hero-video-bg">
+            <source src="/media/careers/trabajaconnosotros.webm" type="video/webm">
+            <source src="/media/careers/trabajaconnosotros.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
 
         <div class="container hero-content-wrapper">
@@ -141,7 +146,10 @@
                     </p>
                 </div>
                 <div class="zigzag-media">
-                    <video src="/media/careers/1.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/1.webm" type="video/webm">
+                        <source src="/media/careers/1.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -159,7 +167,10 @@
                     </p>
                 </div>
                 <div class="zigzag-media">
-                    <video src="/media/careers/2.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/2.webm" type="video/webm">
+                        <source src="/media/careers/2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -181,7 +192,10 @@
                     </p>
                 </div>
                 <div class="zigzag-media bg-dark">
-                    <video src="/media/careers/3.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/3.webm" type="video/webm">
+                        <source src="/media/careers/3.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -197,10 +211,9 @@
             </div>
 
             <div class="benefits-grid">
-                <!-- Card 1 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/1.png" alt="Innovation">
+                        <img src="/media/careers/1.webp" alt="Innovation" loading="lazy">
                     </div>
                     <h3>INNOVATION</h3>
                     <p>We drive digital innovation to create technological solutions.</p>
@@ -209,7 +222,7 @@
                 <!-- Card 2 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/2.png" alt="Colleagues">
+                        <img src="/media/careers/2.webp" alt="Colleagues" loading="lazy">
                     </div>
                     <h3>COLLEAGUES AND FRIENDS</h3>
                     <p>We foster a collaborative environment where every idea is valued and every achievement is
@@ -219,7 +232,7 @@
                 <!-- Card 3 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/3.png" alt="Integration">
+                        <img src="/media/careers/3.webp" alt="Integration" loading="lazy">
                     </div>
                     <h3>REGULAR TEAM-BUILDING ACTIVITIES</h3>
                     <p>We promote team-building activities that strengthen teamwork and our sense of community.</p>
@@ -228,7 +241,7 @@
                 <!-- Card 4 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/4.png" alt="Dynamic Work">
+                        <img src="/media/careers/4.webp" alt="Dynamic Work" loading="lazy">
                     </div>
                     <h3>DYNAMIC WORK ENVIRONMENT</h3>
                     <p>Each day brings new challenges that drive learning and professional growth.</p>
@@ -237,7 +250,7 @@
                 <!-- Card 5 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/5.png" alt="Respect">
+                        <img src="/media/careers/5.webp" alt="Respect" loading="lazy">
                     </div>
                     <h3>RESPECT AND CONSIDERATION</h3>
                     <p>We foster an inclusive culture where every voice is heard and every contribution is recognized.
@@ -247,7 +260,7 @@
                 <!-- Card 6 -->
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/6.png" alt="Flexible Hours">
+                        <img src="/media/careers/6.webp" alt="Flexible Hours" loading="lazy">
                     </div>
                     <h3>FLEXIBLE HOURS. BALANCED LIFE</h3>
                     <p>We offer flexible schedules, seeking the perfect balance between your needs, productivity, and
@@ -264,17 +277,17 @@
             <!-- Column 1: Logo & Social -->
             <div class="footer-col brand-col">
                 <a href="/" class="footer-logo">
-                    <img src="/media/logoex-viz.png" alt="EX-VIZ Logo">
+                    <img src="/media/logoex-viz.webp" alt="EX-VIZ Logo" loading="lazy">
                 </a>
                 <p class="brand-name">EX-VIZ</p>
                 <div class="social-links">
-                    <a href="#" target="_blank" aria-label="LinkedIn">
+                    <a href="javascript:void(0)" aria-label="LinkedIn" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
-                    <a href="#" target="_blank" aria-label="YouTube">
+                    <a href="javascript:void(0)" aria-label="YouTube" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -328,11 +341,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/script.js"></script>
-    <script src="/js/careers.js"></script>
+    <script src="/js/script.js?v=1.0.0"></script>
+    <script src="/js/careers.js?v=1.0.0"></script>
 </body>
 
 </html>
-
-
-

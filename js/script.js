@@ -169,3 +169,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Usecase Carousels Auto-play
+document.addEventListener('DOMContentLoaded', () => {
+    const usecaseCarousels = document.querySelectorAll('.meraki-carousel');
+    
+    usecaseCarousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-images img');
+        if (images.length > 1) {
+            let currentIndex = 0;
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 5000);
+        }
+    });
+});
+

@@ -13,6 +13,7 @@
     margin-bottom: 30px;
     transition: var(--transition);
 }
+
 .back-link:hover {
     color: var(--primary-green);
     transform: translateX(-5px);
@@ -79,7 +80,7 @@
 
 .char-card {
     background: #FAFAFA;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 16px;
     padding: 30px 24px;
 }
@@ -89,12 +90,14 @@
     color: var(--dark-blue);
     margin-bottom: 12px;
 }
+
 .char-subtitle {
     font-size: 1rem;
     color: var(--light-blue);
     margin-bottom: 12px;
     font-weight: 600;
 }
+
 .char-text {
     font-size: 1rem;
     color: var(--text-dark);
@@ -111,7 +114,7 @@
     background: #F8F9FA;
     border-radius: 20px;
     padding: 40px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .why-choose-us-card h3 {
@@ -135,6 +138,36 @@
     color: var(--text-dark);
 }
 
+.why-list li strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.why-list li span {
+    font-size: 0.97rem;
+}
+
+.why-list li span::after {
+    content: '';
+}
+
+/* Italic for the non-bold part — applied via CSS-only trick using em */
+.why-list li strong ~ * {
+    font-style: italic;
+}
+
+/* Target text nodes after <strong> inside <span> */
+.why-list li span {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.why-list li span strong {
+    font-style: normal;
+    font-size: 1.05rem;
+}
+
 .check-icon {
     width: 20px;
     height: 20px;
@@ -148,6 +181,7 @@
     color: var(--white);
     width: 100%;
 }
+
 .btn-dark:hover {
     background: var(--primary-green);
     color: var(--white);
@@ -157,7 +191,7 @@
 /* SPECIALIZED SECTION */
 .specialized-section {
     padding-top: 40px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .specialized-title {
@@ -176,15 +210,15 @@
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
     cursor: pointer;
     transition: var(--transition);
 }
 
 .spec-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-color: var(--primary-green);
 }
 
@@ -250,8 +284,11 @@
 /* MODAL / POPUP */
 .spec-modal-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,31,58,0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 31, 58, 0.8);
     backdrop-filter: blur(8px);
     z-index: 2000;
     display: flex;
@@ -272,7 +309,7 @@
     width: 95%;
     max-width: 1400px;
     border-radius: 20px;
-    height: 90vh; /* forces scroll for text below */
+    height: 90vh;
     overflow-y: auto;
     position: relative;
     transform: translateY(30px) scale(0.95);
@@ -294,7 +331,8 @@
     background: var(--white);
     border: 1px solid var(--light-gray);
     border-radius: 50%;
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 10;
@@ -313,7 +351,9 @@
 
 .carousel-placeholder {
     width: 100%;
-    height: 70vh; /* take majority of vertical screen space */
+    /* aspect-ratio: 16 / 9; */
+    height: 70vh;
+    /* Standard YouTube 16:9 ratio */
     flex-shrink: 0;
     position: relative;
     background: #111;
@@ -325,19 +365,34 @@
     overflow: hidden;
 }
 
-.carousel-placeholder img, .carousel-placeholder video {
+.carousel-placeholder img,
+.carousel-placeholder video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fill horizontal area beautifully */
+    object-fit: cover;
+    border: none;
+}
+
+/* iframes (YouTube) fill the container via absolute positioning */
+.carousel-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px; height: 50px;
-    background: rgba(255,255,255,0.7);
-    display: flex; align-items: center; justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.5rem;
@@ -345,9 +400,18 @@
     color: var(--dark-blue);
     transition: var(--transition);
 }
-.carousel-arrow.left { left: 20px; }
-.carousel-arrow.right { right: 20px; }
-.carousel-arrow:hover { background: var(--white); }
+
+.carousel-arrow.left {
+    left: 20px;
+}
+
+.carousel-arrow.right {
+    right: 20px;
+}
+
+.carousel-arrow:hover {
+    background: var(--white);
+}
 
 
 .modal-text-content {
@@ -359,6 +423,7 @@
     color: var(--dark-blue);
     margin-bottom: 20px;
 }
+
 .modal-desc {
     font-size: 1.1rem;
     margin-bottom: 30px;
@@ -378,79 +443,108 @@
     list-style: none;
     margin-bottom: 30px;
 }
+
 .modal-list li {
     position: relative;
     padding-left: 24px;
     margin-bottom: 12px;
     font-size: 1rem;
 }
+
 .modal-list li::before {
     content: "•";
     color: var(--light-blue);
-    position: absolute; left: 0;
-    font-weight: bold; font-size: 1.5rem;
-    line-height: 1; top: -3px;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1;
+    top: -3px;
 }
 
 .modal-list li strong {
     color: var(--dark-blue);
 }
 
-.mt-50 { margin-top: 50px; }
-.mt-100 { margin-top: 100px; }
-.mb-40 { margin-bottom: 40px; }
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .service-layout {
         grid-template-columns: 1fr;
     }
+
     .sticky-sidebar {
         position: static;
     }
+
     .specialized-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .carousel-placeholder {
-        height: 50vh; /* Better ratio for tablet */
-    }
+
+
 }
+
 @media (max-width: 768px) {
     .service-container {
         padding-top: 100px;
     }
+
     .characteristics-grid {
         grid-template-columns: 1fr;
     }
+
     .specialized-grid {
         grid-template-columns: 1fr;
     }
+
     .service-page-title {
         font-size: 2.2rem;
     }
-    .carousel-placeholder {
-        height: 40vh; /* Much better for phones */
-        min-height: 250px;
-    }
+
+
+
     .modal-text-content {
         padding: 24px;
     }
+
     .modal-title {
         font-size: 1.8rem;
     }
+
     .modal-desc {
         font-size: 1rem;
     }
+
     .carousel-arrow {
-        width: 35px; height: 35px;
+        width: 35px;
+        height: 35px;
         font-size: 1.2rem;
     }
-    .carousel-arrow.left { left: 10px; }
-    .carousel-arrow.right { right: 10px; }
+
+    .carousel-arrow.left {
+        left: 10px;
+    }
+
+    .carousel-arrow.right {
+        right: 10px;
+    }
+
     .close-modal-btn {
         top: 10px;
         right: 10px;
-        width: 35px; height: 35px;
+        width: 35px;
+        height: 35px;
         font-size: 1.2rem;
     }
 }

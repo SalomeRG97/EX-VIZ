@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vacantes | EX-VIZ</title>
+    <title>Empleos | EX-VIZ</title>
     <!-- Tipografía moderna -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Estilos principales -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
     <!-- Estilos específicos de la página -->
-    <link rel="stylesheet" href="/css/careers.css">
-    <link rel="icon" href="/media/logoex-viz.png" type="image/png">
+    <link rel="stylesheet" href="/css/careers.css?v=1.0.0">
+    <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
 <body>
@@ -22,20 +22,20 @@
     <header class="header" id="header">
         <div class="container navbar">
             <a href="/es/" class="logo-lockup">
-                <img src="/media/logoexviz.png" alt="Logo EX-VIZ" class="logo-main">
+                <img src="/media/logoexviz.webp" alt="Logo EX-VIZ" class="logo-main" loading="lazy">
                 <span class="logo-divider"></span>
                 <div class="logo-parent">
                     <span class="logo-caption">una empresa de EBEDIX</span>
-                    <img src="/media/ebedix.png" alt="Logo EBEDIX" class="logo-ebedix">
+                    <img src="/media/ebedix.webp" alt="Logo EBEDIX" class="logo-ebedix" loading="lazy">
                 </div>
             </a>
             <nav class="nav-links">
                 <div class="nav-dropdown">
                     <span class="dropdown-toggle">Servicios</span>
                     <div class="dropdown-menu">
-                        <a href="/es/renderingstudio">Servicios del Estudio de Renders y Arquitectura Digital</a>
-                        <a href="/es/digitalsalestwin">Servicios de la Plataforma de Gemelos Digitales Inmobiliarios</a>
-                        <a href="/es/immersivesalesexperience">Servicios de Showrooms Digitales Interactivos de Última Generación</a>
+                        <a href="/es/renderingstudio">Estudio de Renders y Arquitectura Digital</a>
+                        <a href="/es/digitalsalestwin">Plataforma de Gemelos Digitales Inmobiliarios</a>
+                        <a href="/es/immersivesalesexperience">Showrooms Digitales Interactivos de Última Generación</a>
                     </div>
                 </div>
                 <div class="nav-dropdown">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="push-right">
-                    <a href="/es/careers">Vacantes</a>
+                    <a href="/es/careers">Empleos</a>
                     <a href="/es/sustainability">Sostenibilidad</a>
                     <a target="_blank"
                         href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
@@ -71,11 +71,11 @@
         </div>
         <!-- Menú Móvil -->
         <div class="mobile-menu" id="mobileMenu">
-             <div class="mobile-dropdown-group">
+            <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header">Servicios</div>
-                <a href="/es/renderingstudio">Servicios del Estudio de Renders y Arquitectura Digital</a>
-                <a href="/es/digitalsalestwin">Servicios de la Plataforma de Gemelos Digitales Inmobiliarios</a>
-                <a href="/es/immersivesalesexperience">Servicios de Showrooms Digitales Interactivos de Última Generación</a>
+                <a href="/es/renderingstudio">Estudio de Renders y Arquitectura Digital</a>
+                <a href="/es/digitalsalestwin">Plataforma de Gemelos Digitales Inmobiliarios</a>
+                <a href="/es/immersivesalesexperience">Showrooms Digitales Interactivos de Última Generación</a>
             </div>
             <div class="mobile-dropdown-group">
                 <div class="mobile-dropdown-header">Empresa</div>
@@ -85,10 +85,12 @@
                 <a href="/es/aboutus#presence">Presencia Internacional</a>
             </div>
             <div class="mobile-dropdown-group">
-                <div class="mobile-dropdown-header"><a href="/es/careers" style="color: inherit; text-decoration: none;">Vacantes</a></div>
+                <div class="mobile-dropdown-header"><a href="/es/careers"
+                        style="color: inherit; text-decoration: none;">Empleos</a></div>
             </div>
             <div class="mobile-dropdown-group">
-                <div class="mobile-dropdown-header"><a href="/es/sustainability" style="color: inherit; text-decoration: none;">Sostenibilidad</a></div>
+                <div class="mobile-dropdown-header"><a href="/es/sustainability"
+                        style="color: inherit; text-decoration: none;">Sostenibilidad</a></div>
             </div>
             <a target="_blank"
                 href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
@@ -98,7 +100,10 @@
 
     <!-- Sección Hero -->
     <section class="hero-careers">
-        <video class="hero-video-bg" src="/media/careers/trabajaconnosotros.mp4" autoplay loop muted playsinline></video>
+        <video autoplay loop muted playsinline preload="none" class="bg-video hero-video-bg">
+            <source src="/media/careers/trabajaconnosotros.webm" type="video/webm">
+            <source src="/media/careers/trabajaconnosotros.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
 
         <div class="container hero-content-wrapper">
@@ -108,7 +113,9 @@
                 <span class="text-green">Trabajar juntos es el éxito.</span>
             </h1>
             <p class="hero-subtitle">
-                En nuestra empresa, somos un equipo de individuos comprometidos. Desarrollamos soluciones innovadoras basadas en ingeniería digital, uniendo a nuestros profesionales para colaborar y crecer como uno solo. Una carrera con nosotros es para quienes sienten pasión por la tecnología y la excelencia.
+                En nuestra empresa, somos un equipo de individuos comprometidos. Desarrollamos soluciones innovadoras
+                basadas en ingeniería digital, uniendo a nuestros profesionales para colaborar y crecer como uno solo.
+                Una carrera con nosotros es para quienes sienten pasión por la tecnología y la excelencia.
             </p>
         </div>
     </section>
@@ -119,7 +126,8 @@
             <div class="zigzag-header">
                 <h2 class="title-green-line">En EX-VIZ, creamos un futuro mejor juntos</h2>
                 <p class="subtitle">
-                    Cada día optimizamos y revisamos nuestros procesos para mejorar continuamente nuestro trabajo, haciéndolo más eficiente y agradable para todos.
+                    Cada día optimizamos y revisamos nuestros procesos para mejorar continuamente nuestro trabajo,
+                    haciéndolo más eficiente y agradable para todos.
                 </p>
             </div>
 
@@ -130,11 +138,16 @@
                         <span class="title-green-line">EMPRESA CONECTADA Y FLEXIBLE</span>
                     </h3>
                     <p class="zigzag-text">
-                        Nos conectamos sin importar dónde estemos, superando las barreras de zonas horarias, regiones y dispositivos. Hacemos ingeniería desde cualquier lugar del mundo, con un compromiso firme con la sostenibilidad.
+                        Nos conectamos sin importar dónde estemos, superando las barreras de zonas horarias, regiones y
+                        dispositivos. Hacemos ingeniería desde cualquier lugar del mundo, con un compromiso firme con la
+                        sostenibilidad.
                     </p>
                 </div>
                 <div class="zigzag-media">
-                    <video src="/media/careers/1.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/1.webm" type="video/webm">
+                        <source src="/media/careers/1.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -145,11 +158,16 @@
                         <span class="title-green-line">SOMOS INCLUSIVOS</span>
                     </h3>
                     <p class="zigzag-text">
-                        Nuestros equipos reflejan la rica diversidad de nuestro mundo, garantizando un acceso equitativo a las oportunidades. En cada proyecto, promovemos la inclusión y la igualdad, asegurando que todos tengan la oportunidad de contribuir.
+                        Nuestros equipos reflejan la rica diversidad de nuestro mundo, garantizando un acceso equitativo
+                        a las oportunidades. En cada proyecto, promovemos la inclusión y la igualdad, asegurando que
+                        todos tengan la oportunidad de contribuir.
                     </p>
                 </div>
                 <div class="zigzag-media">
-                    <video src="/media/careers/2.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/2.webm" type="video/webm">
+                        <source src="/media/careers/2.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
@@ -160,14 +178,19 @@
                         <span class="title-green-line">SIEMPRE ACTUAMOS CON ÉTICA</span>
                     </h3>
                     <p class="zigzag-text">
-                        Únete a nosotros para desarrollar tus habilidades en una empresa innovadora con oportunidades en EE. UU., Latinoamérica y Europa.
+                        Únete a nosotros para desarrollar tus habilidades en una empresa innovadora con oportunidades en
+                        EE. UU., Latinoamérica y Europa.
                     </p>
                     <p class="zigzag-text">
-                        Estarás rodeado de profesionales exitosos impulsados por altos valores éticos. Practicamos la transparencia en todas nuestras acciones, fomentando la confianza y la claridad.
+                        Estarás rodeado de profesionales exitosos impulsados por altos valores éticos. Practicamos la
+                        transparencia en todas nuestras acciones, fomentando la confianza y la claridad.
                     </p>
                 </div>
                 <div class="zigzag-media bg-dark">
-                    <video src="/media/careers/3.mp4" autoplay loop muted playsinline></video>
+                    <video autoplay loop muted playsinline preload="none" class="bg-video">
+                        <source src="/media/careers/3.webm" type="video/webm">
+                        <source src="/media/careers/3.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -183,45 +206,48 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/1.png" alt="Innovación">
+                        <img src="/media/careers/1.webp" alt="Innovación" loading="lazy">
                     </div>
                     <h3>INNOVACIÓN</h3>
                     <p>Impulsamos la innovación digital para crear soluciones tecnológicas.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/2.png" alt="Amigos">
+                        <img src="/media/careers/2.webp" alt="Amigos" loading="lazy">
                     </div>
                     <h3>COLEGAS Y AMIGOS</h3>
-                    <p>Fomentamos un ambiente colaborativo donde cada idea es valorada y cada logro se celebra juntos.</p>
+                    <p>Fomentamos un ambiente colaborativo donde cada idea es valorada y cada logro se celebra juntos.
+                    </p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/3.png" alt="Integración">
+                        <img src="/media/careers/3.webp" alt="Integración" loading="lazy">
                     </div>
                     <h3>ACTIVIDADES DE INTEGRACIÓN</h3>
                     <p>Promovemos actividades que fortalecen el trabajo en equipo y nuestro sentido de comunidad.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/4.png" alt="Entorno dinámico">
+                        <img src="/media/careers/4.webp" alt="Entorno dinámico" loading="lazy">
                     </div>
                     <h3>ENTORNO DINÁMICO</h3>
                     <p>Cada día trae nuevos desafíos que impulsan el aprendizaje y el crecimiento profesional.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/5.png" alt="Respeto">
+                        <img src="/media/careers/5.webp" alt="Respeto" loading="lazy">
                     </div>
                     <h3>RESPETO Y CONSIDERACIÓN</h3>
-                    <p>Fomentamos una cultura inclusiva donde cada voz es escuchada y cada contribución es reconocida.</p>
+                    <p>Fomentamos una cultura inclusiva donde cada voz es escuchada y cada contribución es reconocida.
+                    </p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="/media/careers/6.png" alt="Flexibilidad">
+                        <img src="/media/careers/6.webp" alt="Flexibilidad" loading="lazy">
                     </div>
                     <h3>HORARIOS FLEXIBLES</h3>
-                    <p>Ofrecemos horarios flexibles, buscando el equilibrio perfecto entre tus necesidades y el bienestar.</p>
+                    <p>Ofrecemos horarios flexibles, buscando el equilibrio perfecto entre tus necesidades y el
+                        bienestar.</p>
                 </div>
             </div>
         </div>
@@ -234,17 +260,17 @@
             <!-- Column 1: Logo & Social -->
             <div class="footer-col brand-col">
                 <a href="/es/" class="footer-logo">
-                    <img src="/media/logoex-viz.png" alt="Logo EX-VIZ">
+                    <img src="/media/logoex-viz.webp" alt="Logo EX-VIZ" loading="lazy">
                 </a>
                 <p class="brand-name">EX-VIZ</p>
                 <div class="social-links">
-                    <a href="#" target="_blank" aria-label="LinkedIn">
+                    <a href="javascript:void(0)" aria-label="LinkedIn" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
-                    <a href="#" target="_blank" aria-label="YouTube">
+                    <a href="javascript:void(0)" aria-label="YouTube" style="cursor:default;opacity:0.5;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -298,11 +324,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="/js/script.js"></script>
-    <script src="/js/careers.js"></script>
+    <script src="/js/script.js?v=1.0.0"></script>
+    <script src="/js/careers.js?v=1.0.0"></script>
 </body>
 
 </html>
-
-
-
