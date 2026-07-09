@@ -1,0 +1,312 @@
+/* Careers Page Specific Styles */
+body {
+    background-color: #FAFAFA;
+}
+
+/* Green underline utility */
+.title-green-line {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+    font-size: 2.8rem;
+    color: var(--dark-blue);
+}
+
+.title-green-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-green);
+    border-radius: 2px;
+}
+
+/* Specific centering case */
+.text-center .title-green-line::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Hero Careers */
+.hero-careers {
+    padding-top: 180px;
+    padding-bottom: 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background video styles */
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 31, 58, 0.75);
+    /* Dark blue overlay */
+    z-index: 1;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-careers .hero-title {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: #87AFC4;
+}
+
+.hero-careers .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.9;
+    color: white;
+}
+
+/* Zig-Zag Section */
+.zigzag-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.zigzag-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.zigzag-header .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+.zigzag-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.zigzag-row:last-child {
+    margin-bottom: 0;
+}
+
+.zigzag-content {
+    padding-right: 30px;
+}
+
+/* Reverse ordering for left-aligned text */
+.zigzag-row.reverse .zigzag-content {
+    order: 2;
+    padding-right: 0;
+    padding-left: 30px;
+}
+
+.zigzag-row.reverse .zigzag-media {
+    order: 1;
+}
+
+.zigzag-title {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.zigzag-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 24px;
+}
+
+.zigzag-media {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--light-gray);
+    aspect-ratio: 16/10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.zigzag-media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.zigzag-media.bg-dark {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, #001528 100%);
+    color: var(--light-blue);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 120px 0;
+    background-color: #FAFAFA;
+}
+
+.benefits-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.benefit-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-top: 6px solid var(--primary-green);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 31, 58, 0.08);
+}
+
+.benefit-card:hover h3 {
+    color: var(--primary-green);
+}
+
+.benefit-icon {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.benefit-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark-blue);
+    margin-bottom: 16px;
+    min-height: 3.1rem;
+    /* Aligns 1 and 2-line titles */
+    transition: color 0.3s ease;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .zigzag-row {
+        gap: 40px;
+        margin-bottom: 80px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefit-card h3 {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-careers {
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+
+    .hero-careers .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .title-green-line {
+        font-size: 2rem;
+    }
+
+    .zigzag-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .zigzag-content,
+    .zigzag-row.reverse .zigzag-content {
+        order: 1 !important;
+        padding: 0;
+    }
+
+    .zigzag-media,
+    .zigzag-row.reverse .zigzag-media {
+        order: 2 !important;
+    }
+
+    .zigzag-title {
+        font-size: 1.8rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-section {
+        padding: 80px 0;
+    }
+
+    .zigzag-section {
+        padding: 60px 0;
+    }
+}

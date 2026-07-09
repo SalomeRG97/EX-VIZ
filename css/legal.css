@@ -1,0 +1,148 @@
+/* legal.css */
+
+.legal-section-container {
+    max-width: 1000px;
+    margin: 150px auto 100px;
+    padding: 0 5%;
+}
+
+.legal-logo-container {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.legal-logo-container img {
+    width: 200px;
+    height: auto;
+}
+
+.legal-page-title {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 3.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.accordion-section {
+    margin-bottom: 50px;
+}
+
+.accordion-section-title {
+    font-family: 'Darker Grotesque', sans-serif;
+    font-size: 2.2rem;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.accordion-item {
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accordion-item.active {
+    background-color: #fff;
+    border-color: #dcdcdc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f0f0f0;
+}
+
+.accordion-item.active .accordion-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #e2e2e2;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion-icon::before, .accordion-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #888;
+}
+
+.accordion-icon::before {
+    width: 10px;
+    height: 2px;
+}
+
+.accordion-icon::after {
+    width: 2px;
+    height: 10px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon::after {
+    transform: rotate(90deg) scaleY(0);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 25px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 20px 25px;
+}
+
+.accordion-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.accordion-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.btn-download {
+    background-color: var(--dark-blue);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-green);
+    transform: translateY(-2px);
+}

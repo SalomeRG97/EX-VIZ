@@ -1,0 +1,22 @@
+Options -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect index.html to / (Ensures canonical URLs)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/ [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2. Redirect /es/index.html to /es/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /es/index\.html\ HTTP/ [NC]
+RewriteRule ^es/index\.html$ /es/ [R=301,L]
+
+# 3. External Redirect: Remove .html from any URL
+# This ensures that if someone types "page.html", they are redirected to "page"
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/ [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# 4. Internal Mapping: Map "page" to "page.html"
+# If it's not a directory and the .html file exists, serve it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
