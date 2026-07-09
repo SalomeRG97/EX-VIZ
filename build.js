@@ -48,7 +48,13 @@ function copyRecursive(src, dest) {
             const content = fs.readFileSync(src, 'utf8');
             const processed = rewriteHtmlPaths(content);
             fs.writeFileSync(dest, processed, 'utf8');
-            console.log(`Processed: ${path.relative(srcDir, src)} -> ${path.relative(srcDir, dest)}`);
+            console.log(`Processed HTML: ${path.relative(srcDir, src)}`);
+        } else if (name.endsWith('.js')) {
+            // Read and process JS files for hardcoded paths
+            const content = fs.readFileSync(src, 'utf8');
+            const processed = rewriteJsPaths(content);
+            fs.writeFileSync(dest, processed, 'utf8');
+            console.log(`Processed JS:   ${path.relative(srcDir, src)}`);
         } else {
             // Copy binary/static files as-is
             fs.copyFileSync(src, dest);
@@ -58,51 +64,128 @@ function copyRecursive(src, dest) {
 
 function rewriteHtmlPaths(content) {
     // Matches href, src, content, or action attributes starting with a single slash (absolute path)
-    // E.g., href="/css/styles.css" or href="/aboutus#history"
     // Negative lookahead (?!\/) prevents matching protocol-relative URLs like //fonts.googleapis.com
-    const regex = /(href|src|content|action)=((['"]))\/(?!\/)([^'"]*)\2/g;
+    const regex = /(href|src|content|action)=((['"]))\/((?!\/)([^'"]*))(\2)/g;
     
     return content.replace(regex, (match, attribute, quoteWrapper, quote, urlPath) => {
-        let cleanPath = urlPath;
-        let suffix = '';
-        
-        // Find if there's a hash (#) or query parameter (?)
-        const hashIdx = urlPath.indexOf('#');
-        const queryIdx = urlPath.indexOf('?');
-        let splitIdx = -1;
-        if (hashIdx !== -1 && queryIdx !== -1) {
-            splitIdx = Math.min(hashIdx, queryIdx);
-        } else if (hashIdx !== -1) {
-            splitIdx = hashIdx;
-        } else if (queryIdx !== -1) {
-            splitIdx = queryIdx;
-        }
-        
-        if (splitIdx !== -1) {
-            cleanPath = urlPath.slice(0, splitIdx);
-            suffix = urlPath.slice(splitIdx);
-        }
-
-        // Rewrite empty root path "/" or root anchors like "/#history"
-        if (cleanPath === '') {
-            return `${attribute}=${quote}${repoPrefix}/${suffix}${quote}`;
-        }
-
-        // Rewrite directory root paths ending with "/"
-        if (cleanPath.endsWith('/')) {
-            return `${attribute}=${quote}${repoPrefix}/${cleanPath}${suffix}${quote}`;
-        }
-
-        // Check if the path references a page that physically exists as <path>.html in the root.
-        // If so, append ".html" to the link to support GitHub Pages clean URL limitation.
-        const sourceHtmlFile = path.join(srcDir, cleanPath + '.html');
-        if (fs.existsSync(sourceHtmlFile) && fs.statSync(sourceHtmlFile).isFile()) {
-            return `${attribute}=${quote}${repoPrefix}/${cleanPath}.html${suffix}${quote}`;
-        }
-
-        // Otherwise (for assets like css, js, media, or already-extended files)
-        return `${attribute}=${quote}${repoPrefix}/${urlPath}${quote}`;
+        return `${attribute}=${quote}${rewriteUrl(urlPath)}${quote}`;
     });
+}
+
+function rewriteJsPaths(content) {
+    let result = content;
+
+    // 1. Fix isSpanishPage detection: make it base-path aware
+    //    Original: currentPath.startsWith('/es/') || currentPath === '/es'
+    //    New: uses segment-based detection that works with any base path
+    result = result.replace(
+        /const isSpanishPage = currentPath\.startsWith\('\/es\/'\) \|\| currentPath === '\/es'/g,
+        `const isSpanishPage = window.location.pathname.split('/').includes('es')`
+    );
+
+    // 2. Fix getTargetLanguagePath function to be base-path aware
+    //    Replace the entire function body
+    result = result.replace(
+        /const getTargetLanguagePath = \(targetLang\) => \{[\s\S]*?if \(targetLang === 'es'\) \{[\s\S]*?return '\/es' \+ currentPath;[\s\S]*?\} else \{[\s\S]*?return newPath;[\s\S]*?\}\s*\};/,
+        `const getTargetLanguagePath = (targetLang) => {
+        const base = '${repoPrefix}';
+        // Strip the base prefix to get the local path
+        let localPath = currentPath;
+        if (localPath.startsWith(base)) {
+            localPath = localPath.slice(base.length) || '/';
+        }
+        const localIsSpanish = localPath.startsWith('/es/') || localPath === '/es';
+
+        if (targetLang === 'es') {
+            if (localIsSpanish) return null;
+            if (localPath === '/' || localPath.endsWith('index.html')) {
+                return base + '/es/';
+            }
+            return base + '/es' + localPath;
+        } else {
+            if (!localIsSpanish) return null;
+            let newPath = localPath.replace('/es/', '/');
+            if (newPath === '' || newPath.endsWith('index.html')) {
+                return base + '/';
+            }
+            return base + newPath;
+        }
+    };`
+    );
+
+    // 3. Replace all hardcoded absolute href="/..." and src="/..." paths inside JS
+    //    Handle both escaped quotes (JSON strings) and unescaped quotes (template literals)
+    
+    // 3a. Unescaped quotes in template literals: href="/es/resources" or src="/media/img.png"
+    result = result.replace(/(href|src)="(\/(?!\/)[^"]*)"/g, (match, attr, urlPath) => {
+        return `${attr}="${rewriteUrl(urlPath)}"`;
+    });
+
+    // 3b. Escaped quotes in JSON strings: href=\"/es/resources\"
+    result = result.replace(/(href|src)=\\"(\/(?!\/)[^"\\]*)\\"/g, (match, attr, urlPath) => {
+        return `${attr}=\\"${rewriteUrl(urlPath)}\\"`;
+    });
+
+    return result;
+}
+
+/**
+ * Core URL rewriting logic shared by HTML and JS processing.
+ * Takes a path like "/aboutus" or "/es/resources" or "/css/styles.css?v=1.1.0"
+ * and returns the prefixed version, appending .html where appropriate.
+ */
+function rewriteUrl(urlPath) {
+    // Strip leading slash if present (some regexes capture it, some don't)
+    if (urlPath.startsWith('/')) {
+        urlPath = urlPath.slice(1);
+    }
+
+    let cleanPath = urlPath;
+    let suffix = '';
+    
+    // Find if there's a hash (#) or query parameter (?)
+    const hashIdx = urlPath.indexOf('#');
+    const queryIdx = urlPath.indexOf('?');
+    let splitIdx = -1;
+    if (hashIdx !== -1 && queryIdx !== -1) {
+        splitIdx = Math.min(hashIdx, queryIdx);
+    } else if (hashIdx !== -1) {
+        splitIdx = hashIdx;
+    } else if (queryIdx !== -1) {
+        splitIdx = queryIdx;
+    }
+    
+    if (splitIdx !== -1) {
+        cleanPath = urlPath.slice(0, splitIdx);
+        suffix = urlPath.slice(splitIdx);
+    }
+
+    // Rewrite empty root path "/" or root anchors like "/#history"
+    if (cleanPath === '') {
+        return `${repoPrefix}/${suffix}`;
+    }
+
+    // Rewrite directory root paths ending with "/"
+    if (cleanPath.endsWith('/')) {
+        return `${repoPrefix}/${cleanPath}${suffix}`;
+    }
+
+    // Check if the path references a page that physically exists as <path>.html in the source.
+    // If so, append ".html" to the link to support GitHub Pages (no clean URL support).
+    const sourceHtmlFile = path.join(srcDir, cleanPath + '.html');
+    if (fs.existsSync(sourceHtmlFile) && fs.statSync(sourceHtmlFile).isFile()) {
+        return `${repoPrefix}/${cleanPath}.html${suffix}`;
+    }
+
+    // Check if the path references a directory with an index.html inside
+    const sourceDir = path.join(srcDir, cleanPath);
+    const sourceIndexFile = path.join(sourceDir, 'index.html');
+    if (fs.existsSync(sourceDir) && fs.statSync(sourceDir).isDirectory() && fs.existsSync(sourceIndexFile)) {
+        return `${repoPrefix}/${cleanPath}/`;
+    }
+
+    // Otherwise (for assets like css, js, media, or already-extended files)
+    return `${repoPrefix}/${urlPath}`;
 }
 
 console.log('Starting build for GitHub Pages...');
