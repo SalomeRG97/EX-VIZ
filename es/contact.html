@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css?v=1.0.0">
-    <link rel="stylesheet" href="/css/contact.css?v=1.0.0">
+    <link rel="stylesheet" href="/css/styles.css?v=1.1.0">
+    <link rel="stylesheet" href="/css/contact.css?v=1.1.0">
     <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
@@ -51,7 +51,7 @@
                     <a href="/es/careers">Empleos</a>
                     <a href="/es/sustainability">Sostenibilidad</a>
                     <a target="_blank"
-                        href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
+                        href="/es/contact"
                         class="btn btn-primary btn-sm">Contáctanos</a>
                     <div class="lang-switcher lang-desktop-text">
                         <a href="#" class="lang-btn" data-lang="en">EN</a>
@@ -89,7 +89,7 @@
                         style="color:inherit;text-decoration:none;">Sostenibilidad</a></div>
             </div>
             <a target="_blank"
-                href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
+                href="/es/contact"
                 class="btn btn-primary">Contáctanos</a>
         </div>
     </header>
@@ -111,7 +111,7 @@
 
                 <p class="contact-direct-label">¿Prefiere conectarse directamente?</p>
                 <a target="_blank"
-                    href="https://outlook.office.com/bookwithme/user/05d65408887d4a3a834d82d975cce19a%40ebedix.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled"
+                    href="/es/contact"
                     class="btn btn-primary" id="book-meeting-btn">
                     Agendar una Reunión →
                 </a>
@@ -120,8 +120,8 @@
                     <p
                         style="font-size:0.88rem;color:var(--dark-blue);opacity:0.6;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;">
                         Escríbanos a</p>
-                    <a href="mailto:ex-viz@ebedix.com"
-                        style="font-size:1rem;color:var(--primary-green);font-weight:600;text-decoration:none;">ex-viz@ebedix.com</a>
+                    <a href="mailto:info@ebedix.com"
+                        style="font-size:1rem;color:var(--primary-green);font-weight:600;text-decoration:none;">info@ebedix.com</a>
                 </div>
             </aside>
 
@@ -137,7 +137,7 @@
                     <div class="step-connector"></div>
                     <div class="step-pill pending" id="pill-2">
                         <div class="step-num">2</div>
-                        <span>Su Proyecto</span>
+                        <span>Motivo de Contacto</span>
                     </div>
                 </div>
 
@@ -216,17 +216,26 @@
                         </div>
                     </div>
 
-                    <!-- Paso 2: Detalles del proyecto -->
+                    <!-- Paso 2: Detalles de su solicitud -->
                     <div class="form-step" id="step-2">
-                        <h2 class="step-title">Cuéntenos sobre su proyecto</h2>
-                        <p class="step-sub">Comparta los detalles que considere relevantes: etapa de diseño, escala del
-                            desarrollo, objetivos de venta o cualquier información que nos ayude a identificar la mejor
-                            solución para usted.</p>
+                        <h2 class="step-title">¿Cómo podemos ayudarle?</h2>
+                        <p class="step-sub">Seleccione el motivo de su contacto y bríndenos los detalles adicionales para que podamos atender su solicitud de la mejor manera.</p>
 
                         <div class="form-group">
-                            <label for="project-notes">Detalles del Proyecto <span class="req">*</span></label>
+                            <label for="contact-reason">Motivo de contacto <span class="req">*</span></label>
+                            <select id="contact-reason" name="contactReason">
+                                <option value="" disabled selected>Seleccione una opción</option>
+                                <option value="Solicitudes de servicios">Solicitudes de servicios</option>
+                                <option value="Preguntas, quejas, reclamos y/o felicitaciones">Preguntas, quejas, reclamos y/o felicitaciones</option>
+                                <option value="Información general de EBEDIX y sus plataformas (EX-View, EX-View Solar y EX-VIZ)">Información general de EBEDIX y sus plataformas (EX-View, EX-View Solar y EX-VIZ)</option>
+                                <option value="Financiero">Financiero</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-notes">Detalles adicionales <span class="req">*</span></label>
                             <textarea id="project-notes" name="projectNotes"
-                                placeholder="Ej: Estamos desarrollando una torre residencial de 120 unidades en Bogotá, actualmente en etapa de conceptualización. Nos gustaría crear un gemelo digital inmersivo para la preventa..."></textarea>
+                                placeholder="Ej: Detalle aquí su solicitud o consulta para poder brindarle una respuesta adecuada..."></textarea>
                         </div>
 
                         <div class="form-nav">
@@ -295,7 +304,7 @@
                             <polyline points="2,4 12,13 22,4" />
                         </svg>
                     </span>
-                    <p>ex-viz@ebedix.com</p>
+                    <p>info@ebedix.com</p>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">
@@ -317,8 +326,8 @@
         </div>
     </footer>
 
-    <script src="/js/script.js?v=1.0.0"></script>
-    <script src="/js/contact.js?v=1.0.0"></script>
+    <script src="/js/script.js?v=1.1.0"></script>
+    <script src="/js/contact.js?v=1.1.0"></script>
 </body>
 
 </html>
