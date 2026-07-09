@@ -114,7 +114,7 @@ runAfterDOMContentLoaded(() => {
 runAfterDOMContentLoaded(() => {
     const langPref = localStorage.getItem('preferredLang');
     const currentPath = window.location.pathname;
-    const isSpanishPage = currentPath.startsWith('/es/') || currentPath === '/es';
+    const isSpanishPage = window.location.pathname.split('/').includes('es');
 
     // Dynamic Resources Dropdown Injection
     const dropdowns = document.querySelectorAll('.nav-dropdown');
@@ -128,18 +128,18 @@ runAfterDOMContentLoaded(() => {
                     menu.innerHTML = `
                         <div class="dropdown-columns">
                             <div class="dropdown-col-left">
-                                <a href="/es/resources" class="submenu-parent">Artículos y Eventos</a>
+                                <a href="/EX-VIZ/es/resources.html" class="submenu-parent">Artículos y Eventos</a>
                                 <div class="submenu-children">
-                                    <a href="/es/articles" class="submenu-child">Artículos</a>
-                                    <a href="/es/events" class="submenu-child">Eventos</a>
+                                    <a href="/EX-VIZ/es/articles/" class="submenu-child">Artículos</a>
+                                    <a href="/EX-VIZ/es/events/" class="submenu-child">Eventos</a>
                                 </div>
-                                <a href="/es/downloads" class="submenu-parent" style="margin-top: 10px; display: block;">Descargas</a>
+                                <a href="/EX-VIZ/es/downloads.html" class="submenu-parent" style="margin-top: 10px; display: block;">Descargas</a>
                             </div>
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Último Recurso</span>
-                                <a href="/es/articles/article1" class="preview-card-mini">
-                                    <img src="/media/article_resource.png" alt="Último" class="preview-img-mini">
+                                <a href="/EX-VIZ/es/articles/article1.html" class="preview-card-mini">
+                                    <img src="/EX-VIZ/media/article_resource.png" alt="Último" class="preview-img-mini">
                                     <div class="preview-content-mini">
                                         <span class="preview-title-mini">Cómo los Gemelos Digitales Aceleran las Preventas</span>
                                         <span class="preview-date-mini">9 de julio, 2026</span>
@@ -151,18 +151,18 @@ runAfterDOMContentLoaded(() => {
                     menu.innerHTML = `
                         <div class="dropdown-columns">
                             <div class="dropdown-col-left">
-                                <a href="/resources" class="submenu-parent">Articles and Events</a>
+                                <a href="/EX-VIZ/resources.html" class="submenu-parent">Articles and Events</a>
                                 <div class="submenu-children">
-                                    <a href="/articles" class="submenu-child">Articles</a>
-                                    <a href="/events" class="submenu-child">Events</a>
+                                    <a href="/EX-VIZ/articles/" class="submenu-child">Articles</a>
+                                    <a href="/EX-VIZ/events/" class="submenu-child">Events</a>
                                 </div>
-                                <a href="/downloads" class="submenu-parent" style="margin-top: 10px; display: block;">Downloads</a>
+                                <a href="/EX-VIZ/downloads.html" class="submenu-parent" style="margin-top: 10px; display: block;">Downloads</a>
                             </div>
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Latest Resource</span>
-                                <a href="/articles/article1" class="preview-card-mini">
-                                    <img src="/media/article_resource.png" alt="Latest" class="preview-img-mini">
+                                <a href="/EX-VIZ/articles/article1.html" class="preview-card-mini">
+                                    <img src="/EX-VIZ/media/article_resource.png" alt="Latest" class="preview-img-mini">
                                     <div class="preview-content-mini">
                                         <span class="preview-title-mini">How Digital Twins Accelerate Pre-Sales</span>
                                         <span class="preview-date-mini">July 9, 2026</span>
@@ -184,18 +184,18 @@ runAfterDOMContentLoaded(() => {
                 if (isSpanishPage) {
                     group.innerHTML = `
                         <div class="mobile-dropdown-header">Recursos</div>
-                        <a href="/es/resources" style="font-weight: 600;">Artículos y Eventos</a>
-                        <a href="/es/articles" style="padding-left: 20px; font-size: 0.9em;">Artículos</a>
-                        <a href="/es/events" style="padding-left: 20px; font-size: 0.9em; margin-bottom: 10px; display: block;">Eventos</a>
-                        <a href="/es/downloads" style="font-weight: 600;">Descargas</a>
+                        <a href="/EX-VIZ/es/resources.html" style="font-weight: 600;">Artículos y Eventos</a>
+                        <a href="/EX-VIZ/es/articles/" style="padding-left: 20px; font-size: 0.9em;">Artículos</a>
+                        <a href="/EX-VIZ/es/events/" style="padding-left: 20px; font-size: 0.9em; margin-bottom: 10px; display: block;">Eventos</a>
+                        <a href="/EX-VIZ/es/downloads.html" style="font-weight: 600;">Descargas</a>
                     `;
                 } else {
                     group.innerHTML = `
                         <div class="mobile-dropdown-header">Resources</div>
-                        <a href="/resources" style="font-weight: 600;">Articles and Events</a>
-                        <a href="/articles" style="padding-left: 20px; font-size: 0.9em;">Articles</a>
-                        <a href="/events" style="padding-left: 20px; font-size: 0.9em; margin-bottom: 10px; display: block;">Events</a>
-                        <a href="/downloads" style="font-weight: 600;">Downloads</a>
+                        <a href="/EX-VIZ/resources.html" style="font-weight: 600;">Articles and Events</a>
+                        <a href="/EX-VIZ/articles/" style="padding-left: 20px; font-size: 0.9em;">Articles</a>
+                        <a href="/EX-VIZ/events/" style="padding-left: 20px; font-size: 0.9em; margin-bottom: 10px; display: block;">Events</a>
+                        <a href="/EX-VIZ/downloads.html" style="font-weight: 600;">Downloads</a>
                     `;
                 }
             }
@@ -204,21 +204,27 @@ runAfterDOMContentLoaded(() => {
 
     // Helper to get matching page in other language
     const getTargetLanguagePath = (targetLang) => {
+        const base = '/EX-VIZ';
+        // Strip the base prefix to get the local path
+        let localPath = currentPath;
+        if (localPath.startsWith(base)) {
+            localPath = localPath.slice(base.length) || '/';
+        }
+        const localIsSpanish = localPath.startsWith('/es/') || localPath === '/es';
+
         if (targetLang === 'es') {
-            if (isSpanishPage) return null;
-            // From EN to ES
-            if (currentPath === '/' || currentPath.endsWith('index.html')) {
-                return '/es/';
+            if (localIsSpanish) return null;
+            if (localPath === '/' || localPath.endsWith('index.html')) {
+                return base + '/es/';
             }
-            return '/es' + currentPath;
+            return base + '/es' + localPath;
         } else {
-            if (!isSpanishPage) return null;
-            // From ES to EN
-            let newPath = currentPath.replace('/es/', '/');
+            if (!localIsSpanish) return null;
+            let newPath = localPath.replace('/es/', '/');
             if (newPath === '' || newPath.endsWith('index.html')) {
-                return '/';
+                return base + '/';
             }
-            return newPath;
+            return base + newPath;
         }
     };
 
