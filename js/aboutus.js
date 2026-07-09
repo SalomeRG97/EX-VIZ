@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // === Typewriter / Swap Loop Logic ===
     const currentPath = window.location.pathname;
-    const isSpanish = currentPath.includes('/es/');
+    const isSpanish = currentPath.startsWith('/es/') || currentPath === '/es';
 
     const phrasesEn = [
         "Innovative solutions transforming the real estate experience.",
