@@ -138,10 +138,10 @@ runAfterDOMContentLoaded(() => {
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Último Recurso</span>
-                                <a href="/es/articles/article1" class="preview-card-mini">
-                                    <img src="/media/article_resource.png" alt="Último" class="preview-img-mini">
+                                <a href="/es/articles/futuro-real-estate-gemelos-digitales" class="preview-card-mini">
+                                    <img src="/media/articles/article1/1.png" alt="Último" class="preview-img-mini">
                                     <div class="preview-content-mini">
-                                        <span class="preview-title-mini">Cómo los Gemelos Digitales Aceleran las Preventas</span>
+                                        <span class="preview-title-mini">El futuro del Real Estate: Cómo los gemelos digitales aceleran las ventas y rompen fronteras geográficas</span>
                                         <span class="preview-date-mini">9 de julio, 2026</span>
                                     </div>
                                 </a>
@@ -161,10 +161,10 @@ runAfterDOMContentLoaded(() => {
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Latest Resource</span>
-                                <a href="/articles/article1" class="preview-card-mini">
-                                    <img src="/media/article_resource.png" alt="Latest" class="preview-img-mini">
+                                <a href="/articles/future-real-estate-digital-twins" class="preview-card-mini">
+                                    <img src="/media/articles/article1/1.png" alt="Latest" class="preview-img-mini">
                                     <div class="preview-content-mini">
-                                        <span class="preview-title-mini">How Digital Twins Accelerate Pre-Sales</span>
+                                        <span class="preview-title-mini">The Future of Real Estate: How Digital Twins Accelerate Sales and Break Geographical Borders</span>
                                         <span class="preview-date-mini">July 9, 2026</span>
                                     </div>
                                 </a>

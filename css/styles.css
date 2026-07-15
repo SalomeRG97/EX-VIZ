@@ -1861,3 +1861,362 @@ h6 {
   font-size: 0.72rem;
   color: var(--text-light);
 }
+
+/* ==========================================================================
+   Editorial Article Styles (Balanced Double Column & Inline Images)
+   ========================================================================== */
+
+/* Balanced column flow for text blocks */
+.article-section-text {
+  column-count: 2;
+  column-gap: 40px;
+  margin-bottom: 35px;
+  text-align: justify;
+}
+
+/* Callout intro text styled like editorial */
+.article-lead-text {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: var(--primary-green);
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-left: 4px solid var(--primary-green);
+  padding-left: 20px;
+}
+
+/* Styled inline image containers */
+.article-image-container {
+  margin: 40px 0;
+  text-align: center;
+  break-inside: avoid; /* Prevent images from breaking across columns if nested */
+}
+
+.article-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 31, 58, 0.12);
+  display: block;
+  margin: 0 auto;
+}
+
+.article-image-caption {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* Subheadings between sections */
+.article-subheading {
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Callout block for list items */
+.article-list-block {
+  background: rgba(0, 31, 58, 0.03);
+  border-radius: 12px;
+  padding: 30px;
+  margin: 35px 0;
+  border-left: 4px solid var(--primary-green);
+}
+
+.article-list-block ol {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.article-list-block li {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.article-list-block li:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact card at the bottom */
+.article-contact-card {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #002d54 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.article-contact-card h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.article-contact-card p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+}
+
+.article-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.channel-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.channel-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.channel-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.channel-item a:hover {
+  color: var(--primary-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .article-section-text {
+    column-count: 1;
+    gap: 0;
+  }
+  .article-contact-card {
+    padding: 25px;
+  }
+  .article-subheading {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Interactive Diagram Component (Flowchart)
+   ========================================================================== */
+.article-diagram {
+  background: rgba(0, 31, 58, 0.02);
+  border: 1px solid rgba(0, 31, 58, 0.06);
+  border-radius: 16px;
+  padding: 35px 20px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 650px;
+  break-inside: avoid;
+}
+
+.diagram-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.diagram-step {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.green-pill {
+  background: var(--primary-green);
+  box-shadow: 0 4px 15px rgba(112, 193, 92, 0.2);
+}
+
+.orange-pill {
+  background: #E06C47; /* Warm premium orange matching image */
+  box-shadow: 0 4px 15px rgba(224, 108, 71, 0.2);
+}
+
+.step-icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lines splitting */
+.diagram-split-lines {
+  width: 75%;
+  height: 20px;
+  border-bottom: 2px solid rgba(0, 31, 58, 0.1);
+  border-left: 2px solid rgba(0, 31, 58, 0.1);
+  border-right: 2px solid rgba(0, 31, 58, 0.1);
+  position: relative;
+}
+
+.diagram-split-lines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 31, 58, 0.1);
+  transform: translateX(-50%);
+}
+
+/* Split row */
+.diagram-split-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 8px;
+  gap: 15px;
+}
+
+.split-pill {
+  flex: 1;
+  background: #fff;
+  border: 1px solid rgba(0, 31, 58, 0.08);
+  padding: 12px 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  box-shadow: 0 4px 10px rgba(0, 31, 58, 0.03);
+}
+
+.split-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Merge dotted lines */
+.diagram-merge-lines {
+  width: 75%;
+  height: 40px;
+  border-top: 1.5px dashed rgba(0, 31, 58, 0.2);
+  border-left: 1.5px dashed rgba(0, 31, 58, 0.2);
+  border-right: 1.5px dashed rgba(0, 31, 58, 0.2);
+  position: relative;
+  margin-top: 8px;
+}
+
+.diagram-merge-lines::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1.5px;
+  height: 100%;
+  border-left: 1.5px dashed rgba(0, 31, 58, 0.2);
+  transform: translateX(-50%);
+}
+
+.merge-label {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 4px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #dd6b20;
+  border-radius: 20px;
+  border: 1px dashed rgba(221, 107, 32, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.diagram-arrow-down {
+  color: rgba(0, 31, 58, 0.25);
+  font-size: 1.5rem;
+  margin: 10px 0;
+  line-height: 1;
+}
+
+/* Mobile responsive styles for the diagram */
+@media (max-width: 580px) {
+  .diagram-split-row {
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+  }
+  .diagram-split-lines, .diagram-merge-lines {
+    display: none;
+  }
+  .diagram-arrow-down {
+    display: block;
+    margin: 12px 0;
+  }
+  .diagram-step-user {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .diagram-step-user::after {
+    content: '↓';
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 31, 58, 0.25);
+    font-size: 1.5rem;
+  }
+  .split-pill {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .split-pill:last-child {
+    margin-bottom: 20px;
+  }
+  .split-pill::after {
+    content: '↓';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 31, 58, 0.25);
+    font-size: 1.3rem;
+  }
+  .split-pill:last-child::after {
+    content: 'Desconexión';
+    bottom: -25px;
+    background: #fff;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #dd6b20;
+    border-radius: 20px;
+    border: 1px dashed rgba(221, 107, 32, 0.4);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    line-height: 1.2;
+  }
+  .diagram-arrow-down-first-orange {
+    margin-top: 30px !important;
+  }
+}
