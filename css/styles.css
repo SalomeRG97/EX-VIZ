@@ -1868,8 +1868,6 @@ h6 {
 
 /* Balanced column flow for text blocks */
 .article-section-text {
-  column-count: 2;
-  column-gap: 40px;
   margin-bottom: 35px;
   text-align: justify;
 }
@@ -1994,10 +1992,6 @@ h6 {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .article-section-text {
-    column-count: 1;
-    gap: 0;
-  }
   .article-contact-card {
     padding: 25px;
   }

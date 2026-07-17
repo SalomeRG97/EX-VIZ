@@ -204,25 +204,46 @@ runAfterDOMContentLoaded(() => {
 
     // Helper to get matching page in other language
     const getTargetLanguagePath = (targetLang) => {
-        const base = '/EX-VIZ';
-        // Strip the base prefix to get the local path
-        let localPath = currentPath;
-        if (localPath.startsWith(base)) {
-            localPath = localPath.slice(base.length) || '/';
+        const pathname = window.location.pathname;
+        let base = "";
+        let localPath = pathname;
+
+        if (pathname.startsWith('/EX-VIZ')) {
+            base = '/EX-VIZ';
+            localPath = pathname.slice(7) || '/';
         }
+
         const localIsSpanish = localPath.startsWith('/es/') || localPath === '/es';
+
+        // Translation map for pages with different names in EN and ES
+        const translations = {
+            '/articles/future-real-estate-digital-twins': '/es/articles/futuro-real-estate-gemelos-digitales',
+            '/es/articles/futuro-real-estate-gemelos-digitales': '/articles/future-real-estate-digital-twins'
+        };
+
+        let hasHtml = localPath.endsWith('.html');
+        let cleanLocalPath = hasHtml ? localPath.slice(0, -5) : localPath;
+
+        if (translations[cleanLocalPath]) {
+            let targetLocalPath = translations[cleanLocalPath];
+            if (hasHtml || base !== '') {
+                targetLocalPath += '.html';
+            }
+            return base + targetLocalPath;
+        }
 
         if (targetLang === 'es') {
             if (localIsSpanish) return null;
-            if (localPath === '/' || localPath.endsWith('index.html')) {
-                return base + '/es/';
+            if (cleanLocalPath === '/' || cleanLocalPath === '/index') {
+                return base + '/es/' + (hasHtml || base !== '' ? 'index.html' : '');
             }
             return base + '/es' + localPath;
         } else {
             if (!localIsSpanish) return null;
             let newPath = localPath.replace('/es/', '/');
-            if (newPath === '' || newPath.endsWith('index.html')) {
-                return base + '/';
+            if (newPath === '/es') newPath = '/';
+            if (newPath === '/' || newPath === '/index') {
+                return base + '/' + (hasHtml || base !== '' ? 'index.html' : '');
             }
             return base + newPath;
         }
