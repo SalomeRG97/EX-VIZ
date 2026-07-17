@@ -114,7 +114,7 @@ runAfterDOMContentLoaded(() => {
 runAfterDOMContentLoaded(() => {
     const langPref = localStorage.getItem('preferredLang');
     const currentPath = window.location.pathname;
-    const isSpanishPage = currentPath.startsWith('/es/') || currentPath === '/es';
+    const isSpanishPage = window.location.pathname.split('/').includes('es');
 
     // Dynamic Resources Dropdown Injection
     const dropdowns = document.querySelectorAll('.nav-dropdown');
@@ -204,21 +204,48 @@ runAfterDOMContentLoaded(() => {
 
     // Helper to get matching page in other language
     const getTargetLanguagePath = (targetLang) => {
+        const pathname = window.location.pathname;
+        let base = "";
+        let localPath = pathname;
+
+        if (pathname.startsWith('/EX-VIZ')) {
+            base = '/EX-VIZ';
+            localPath = pathname.slice(7) || '/';
+        }
+
+        const localIsSpanish = localPath.startsWith('/es/') || localPath === '/es';
+
+        // Translation map for pages with different names in EN and ES
+        const translations = {
+            '/articles/future-real-estate-digital-twins': '/es/articles/futuro-real-estate-gemelos-digitales',
+            '/es/articles/futuro-real-estate-gemelos-digitales': '/articles/future-real-estate-digital-twins'
+        };
+
+        let hasHtml = localPath.endsWith('.html');
+        let cleanLocalPath = hasHtml ? localPath.slice(0, -5) : localPath;
+
+        if (translations[cleanLocalPath]) {
+            let targetLocalPath = translations[cleanLocalPath];
+            if (hasHtml || base !== '') {
+                targetLocalPath += '.html';
+            }
+            return base + targetLocalPath;
+        }
+
         if (targetLang === 'es') {
-            if (isSpanishPage) return null;
-            // From EN to ES
-            if (currentPath === '/' || currentPath.endsWith('index.html')) {
-                return '/es/';
+            if (localIsSpanish) return null;
+            if (cleanLocalPath === '/' || cleanLocalPath === '/index') {
+                return base + '/es/' + (hasHtml || base !== '' ? 'index.html' : '');
             }
-            return '/es' + currentPath;
+            return base + '/es' + localPath;
         } else {
-            if (!isSpanishPage) return null;
-            // From ES to EN
-            let newPath = currentPath.replace('/es/', '/');
-            if (newPath === '' || newPath.endsWith('index.html')) {
-                return '/';
+            if (!localIsSpanish) return null;
+            let newPath = localPath.replace('/es/', '/');
+            if (newPath === '/es') newPath = '/';
+            if (newPath === '/' || newPath === '/index') {
+                return base + '/' + (hasHtml || base !== '' ? 'index.html' : '');
             }
-            return newPath;
+            return base + newPath;
         }
     };
 

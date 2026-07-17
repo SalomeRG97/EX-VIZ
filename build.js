@@ -75,43 +75,6 @@ function rewriteHtmlPaths(content) {
 function rewriteJsPaths(content) {
     let result = content;
 
-    // 1. Fix isSpanishPage detection: make it base-path aware
-    //    Original: currentPath.startsWith('/es/') || currentPath === '/es'
-    //    New: uses segment-based detection that works with any base path
-    result = result.replace(
-        /const isSpanishPage = currentPath\.startsWith\('\/es\/'\) \|\| currentPath === '\/es'/g,
-        `const isSpanishPage = window.location.pathname.split('/').includes('es')`
-    );
-
-    // 2. Fix getTargetLanguagePath function to be base-path aware
-    //    Replace the entire function body
-    result = result.replace(
-        /const getTargetLanguagePath = \(targetLang\) => \{[\s\S]*?if \(targetLang === 'es'\) \{[\s\S]*?return '\/es' \+ currentPath;[\s\S]*?\} else \{[\s\S]*?return newPath;[\s\S]*?\}\s*\};/,
-        `const getTargetLanguagePath = (targetLang) => {
-        const base = '${repoPrefix}';
-        // Strip the base prefix to get the local path
-        let localPath = currentPath;
-        if (localPath.startsWith(base)) {
-            localPath = localPath.slice(base.length) || '/';
-        }
-        const localIsSpanish = localPath.startsWith('/es/') || localPath === '/es';
-
-        if (targetLang === 'es') {
-            if (localIsSpanish) return null;
-            if (localPath === '/' || localPath.endsWith('index.html')) {
-                return base + '/es/';
-            }
-            return base + '/es' + localPath;
-        } else {
-            if (!localIsSpanish) return null;
-            let newPath = localPath.replace('/es/', '/');
-            if (newPath === '' || newPath.endsWith('index.html')) {
-                return base + '/';
-            }
-            return base + newPath;
-        }
-    };`
-    );
 
     // 3. Replace all hardcoded absolute href="/..." and src="/..." paths inside JS
     //    Handle both escaped quotes (JSON strings) and unescaped quotes (template literals)

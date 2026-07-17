@@ -1,5 +1,5 @@
 /**
- * EX-VIZ — Local Development Server
+ * EX-VIZ - Local Development Server
  * ===================================
  * Run:  node serve.js
  * Then open:  http://localhost:3000
@@ -53,11 +53,29 @@ var server = http.createServer(function(req, res) {
     var pathname = url.parse(req.url).pathname;
     try { pathname = decodeURIComponent(pathname); } catch (e) {}
 
-    if (pathname === '/index' || pathname === '/index.html') return redirect(res, '/');
-    if (pathname === '/es/index' || pathname === '/es/index.html') return redirect(res, '/es/');
-    if (pathname.endsWith('.html')) return redirect(res, pathname.slice(0, -5) || '/');
+    // Support local preview of production build (which uses /EX-VIZ prefix)
+    const REPO_PREFIX = '/EX-VIZ';
+    const hasPrefix = pathname.startsWith(REPO_PREFIX);
+    if (hasPrefix) {
+        pathname = pathname.substring(REPO_PREFIX.length) || '/';
+    }
 
-    var filePath = path.join(ROOT, pathname);
+    if (pathname === '/index' || pathname === '/index.html') {
+        return redirect(res, hasPrefix ? REPO_PREFIX + '/' : '/');
+    }
+    if (pathname === '/es/index' || pathname === '/es/index.html') {
+        return redirect(res, hasPrefix ? REPO_PREFIX + '/es/' : '/es/');
+    }
+    if (pathname.endsWith('.html')) {
+        const cleanPath = pathname.slice(0, -5) || '/';
+        return redirect(res, hasPrefix ? REPO_PREFIX + cleanPath : cleanPath);
+    }
+
+    // If request had /EX-VIZ prefix, serve from dist/ directory (if exists)
+    // Otherwise serve from root directory
+    const distExists = fs.existsSync(path.join(ROOT, 'dist'));
+    const baseDir = (hasPrefix && distExists) ? path.join(ROOT, 'dist') : ROOT;
+    var filePath = path.join(baseDir, pathname);
 
     try {
         var stat = fs.statSync(filePath);
