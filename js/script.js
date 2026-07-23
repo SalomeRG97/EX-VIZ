@@ -138,11 +138,11 @@ runAfterDOMContentLoaded(() => {
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Último Recurso</span>
-                                <a href="/es/articles/futuro-real-estate-gemelos-digitales" class="preview-card-mini">
-                                    <img src="/media/articles/article1/1.png" alt="Último" class="preview-img-mini">
+                                <a href="/es/articles/desarrollo-inmobiliario-responsabilidad-evolutiva" class="preview-card-mini">
+                                    <img src="/media/articles/article2/1.jpg" alt="Último" class="preview-img-mini">
                                     <div class="preview-content-mini">
-                                        <span class="preview-title-mini">El futuro del Real Estate: Cómo los gemelos digitales aceleran las ventas y rompen fronteras geográficas</span>
-                                        <span class="preview-date-mini">9 de julio, 2026</span>
+                                        <span class="preview-title-mini">El Desarrollo Inmobiliario como Responsabilidad Evolutiva: Integración Digital, Eficiencia Operativa y Valor Social en la Nueva Era del Sector</span>
+                                        <span class="preview-date-mini">22 de julio, 2026</span>
                                     </div>
                                 </a>
                             </div>
@@ -161,11 +161,11 @@ runAfterDOMContentLoaded(() => {
                             <div class="dropdown-col-divider"></div>
                             <div class="dropdown-col-right">
                                 <span class="preview-label">Latest Resource</span>
-                                <a href="/articles/future-real-estate-digital-twins" class="preview-card-mini">
-                                    <img src="/media/articles/article1/1.png" alt="Latest" class="preview-img-mini">
+                                <a href="/articles/real-estate-development-evolutionary-responsibility" class="preview-card-mini">
+                                    <img src="/media/articles/article2/1.jpg" alt="Latest" class="preview-img-mini">
                                     <div class="preview-content-mini">
-                                        <span class="preview-title-mini">The Future of Real Estate: How Digital Twins Accelerate Sales and Break Geographical Borders</span>
-                                        <span class="preview-date-mini">July 9, 2026</span>
+                                        <span class="preview-title-mini">Real Estate Development as Evolutionary Responsibility: Digital Integration, Operational Efficiency, and Social Value in the New Era of the Sector</span>
+                                        <span class="preview-date-mini">July 22, 2026</span>
                                     </div>
                                 </a>
                             </div>
@@ -218,7 +218,9 @@ runAfterDOMContentLoaded(() => {
         // Translation map for pages with different names in EN and ES
         const translations = {
             '/articles/future-real-estate-digital-twins': '/es/articles/futuro-real-estate-gemelos-digitales',
-            '/es/articles/futuro-real-estate-gemelos-digitales': '/articles/future-real-estate-digital-twins'
+            '/es/articles/futuro-real-estate-gemelos-digitales': '/articles/future-real-estate-digital-twins',
+            '/articles/real-estate-development-evolutionary-responsibility': '/es/articles/desarrollo-inmobiliario-responsabilidad-evolutiva',
+            '/es/articles/desarrollo-inmobiliario-responsabilidad-evolutiva': '/articles/real-estate-development-evolutionary-responsibility'
         };
 
         let hasHtml = localPath.endsWith('.html');

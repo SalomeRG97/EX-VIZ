@@ -126,37 +126,156 @@
             <!-- Downloads Grid -->
             <section class="resources-section">
                 <div class="resources-grid">
-                    <!-- Download Card 1 -->
-                    <div class="resource-card">
-                        <div class="resource-card-img">
-                            <img src="/media/download_resource.png" alt="Report 1" loading="lazy">
-                        </div>
-                        <div class="resource-card-content">
-                            <h3 class="resource-card-title">Renewable Asset Performance Report 2026</h3>
-                            <div class="resource-card-spacer"></div>
-                            <span class="resource-card-author">Asset Management Division</span>
-                            <p class="resource-card-comment">A comprehensive, data-driven report exploring monitoring challenges and performance solutions for renewable energy assets.</p>
-                            <a href="/documents/asset-performance-report.pdf" download class="btn btn-primary download-btn">Download PDF &darr;</a>
+                    <!-- Download Card 1 — linked to Article 2 (Newest) -->
+                    <div class="resource-card download-card">
+                        <a href="/articles/real-estate-development-evolutionary-responsibility" class="download-card-link">
+                            <div class="resource-card-img">
+                                <img src="/media/articles/article2/1.jpg" alt="Real Estate Development as Evolutionary Responsibility" loading="lazy">
+                            </div>
+                            <div class="resource-card-content">
+                                <h3 class="resource-card-title">Real Estate Development as Evolutionary Responsibility: Digital Integration, Operational Efficiency, and Social Value in the New Era of the Sector</h3>
+                                <span class="resource-card-date">July 22, 2026</span>
+                                <div class="resource-card-spacer"></div>
+                                <span class="resource-card-author">Nicolas Castro | EX-VIZ</span>
+                                <p class="resource-card-comment">An insight into how digital integration, operational efficiency, and social responsibility converge to define the sector's competitiveness.</p>
+                            </div>
+                        </a>
+                        <div class="download-card-actions">
+                            <button class="download-pdf-btn"
+                                data-pdf="/documents/real-estate-development-evolutionary-responsibility.pdf"
+                                data-title="Real Estate Development as Evolutionary Responsibility">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>Download PDF</span>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Download Card 2 -->
-                    <div class="resource-card">
-                        <div class="resource-card-img">
-                            <img src="/media/download_resource.png" alt="Report 2" loading="lazy">
+                    <!-- Download Card 2 — linked to Article 1 -->
+                    <div class="resource-card download-card">
+                        <a href="/articles/future-real-estate-digital-twins" class="download-card-link">
+                            <div class="resource-card-img">
+                                <img src="/media/articles/article1/1.png" alt="The Future of Real Estate" loading="lazy">
+                            </div>
+                            <div class="resource-card-content">
+                                <h3 class="resource-card-title">The Future of Real Estate: How Digital Twins Accelerate Sales and Break Geographical Borders</h3>
+                                <span class="resource-card-date">July 9, 2026</span>
+                                <div class="resource-card-spacer"></div>
+                                <span class="resource-card-author">Santiago Cadavid | EX-VIZ</span>
+                                <p class="resource-card-comment">A cutting-edge perspective on mitigating buyer uncertainty and globalizing real estate pre-sales.</p>
+                            </div>
+                        </a>
+                        <div class="download-card-actions">
+                            <button class="download-pdf-btn"
+                                data-pdf="/documents/future-real-estate-digital-twins.pdf"
+                                data-title="The Future of Real Estate: How Digital Twins Accelerate Sales">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>Download PDF</span>
+                            </button>
                         </div>
-                        <div class="resource-card-content">
-                            <h3 class="resource-card-title">Digital Twin Optimization Guide for Wind Farms</h3>
-                            <div class="resource-card-spacer"></div>
-                            <span class="resource-card-author">Engineering Division</span>
-                            <p class="resource-card-comment">Technical whitepaper outlining BIM integration schemas, predictive maintenance, and real-time sensor monitoring layout optimizations.</p>
-                            <a href="/documents/wind-farm-digital-twin.pdf" download class="btn btn-primary download-btn">Download PDF &darr;</a>
+                    </div>
+
+                    <!-- Download Card 3 — Digital Twin Optimization Guide (placeholder) -->
+                    <div class="resource-card download-card">
+                        <a href="/articles/future-real-estate-digital-twins" class="download-card-link">
+                            <div class="resource-card-img">
+                                <img src="/media/download_resource.png" alt="Digital Twin Optimization Guide" loading="lazy">
+                            </div>
+                            <div class="resource-card-content">
+                                <h3 class="resource-card-title">Digital Twin Optimization Guide for Wind Farms</h3>
+                                <div class="resource-card-spacer"></div>
+                                <span class="resource-card-author">Engineering Division</span>
+                                <p class="resource-card-comment">Technical whitepaper outlining BIM integration schemas, predictive maintenance, and real-time sensor monitoring layout optimizations.</p>
+                            </div>
+                        </a>
+                        <div class="download-card-actions">
+                            <button class="download-pdf-btn"
+                                data-pdf="/documents/wind-farm-digital-twin.pdf"
+                                data-title="Digital Twin Optimization Guide for Wind Farms">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                <span>Download PDF</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+
+    <!-- Download Lead Form Modal -->
+    <div class="download-modal-overlay" id="downloadModal">
+        <div class="download-modal-panel">
+            <button class="download-modal-close" id="closeDownloadModal" aria-label="Close">&times;</button>
+
+            <div class="download-modal-header">
+                <span class="download-modal-eyebrow">Free Download</span>
+                <h2 class="download-modal-title">Get your PDF document</h2>
+                <p class="download-modal-subtitle">Fill in your contact details and we'll start the download right away.</p>
+                <div class="download-modal-doc-title" id="downloadModalDocTitle"></div>
+            </div>
+
+            <form id="download-lead-form" novalidate>
+                <input type="hidden" id="download-pdf-url">
+                <input type="hidden" id="download-doc-title">
+
+                <div class="dl-form-row">
+                    <div class="dl-form-group">
+                        <label for="dl-first-name">First Name <span class="req">*</span></label>
+                        <input type="text" id="dl-first-name" name="firstName" placeholder="Jane" autocomplete="given-name">
+                    </div>
+                    <div class="dl-form-group">
+                        <label for="dl-last-name">Last Name <span class="req">*</span></label>
+                        <input type="text" id="dl-last-name" name="lastName" placeholder="Doe" autocomplete="family-name">
+                    </div>
+                </div>
+
+                <div class="dl-form-group">
+                    <label for="dl-email">Email <span class="req">*</span></label>
+                    <input type="email" id="dl-email" name="email" placeholder="jane@company.com" autocomplete="email">
+                </div>
+
+                <div class="dl-form-group">
+                    <label for="dl-phone">Phone Number <span class="req">*</span></label>
+                    <div class="dl-phone-row">
+                        <select id="dl-phone-code" name="phoneCode" aria-label="Country code">
+                            <option value="+1" selected>🇺🇸 +1 (US)</option>
+                            <option value="+1-CA">🇨🇦 +1 (CA)</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+55">🇧🇷 +55</option>
+                            <option value="+56">🇨🇱 +56</option>
+                            <option value="+51">🇵🇪 +51</option>
+                            <option value="+593">🇪🇨 +593</option>
+                            <option value="+507">🇵🇦 +507</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+33">🇫🇷 +33</option>
+                        </select>
+                        <input type="tel" id="dl-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+                    </div>
+                </div>
+
+                <div class="dl-form-group">
+                    <label for="dl-company">Company <span class="req">*</span></label>
+                    <input type="text" id="dl-company" name="company" placeholder="Your company name" autocomplete="organization">
+                </div>
+
+                <button type="submit" class="btn-download-submit" id="btn-download-submit">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Submit & Download</span>
+                </button>
+            </form>
+
+            <div class="download-success" id="download-success-msg">
+                <div class="download-success-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>Download started!</h3>
+                <p>Thank you for your interest. Your PDF is being downloaded now.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -232,7 +351,9 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="/js/script.js?v=1.1.0"></script>
+    <script src="/js/downloads.js?v=1.0.0"></script>
 </body>
 
 </html>

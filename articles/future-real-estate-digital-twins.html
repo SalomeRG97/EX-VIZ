@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css?v=1.1.0">
+    <link rel="stylesheet" href="/css/contact.css?v=1.1.0">
     <link rel="icon" href="/media/logoex-viz.webp" type="image/webp">
 </head>
 
@@ -116,26 +117,50 @@
         </div>
     </header>
 
-    <main class="resource-detail-container">
-        <div class="container" style="max-width: 900px;">
+    <main class="resource-detail-container" style="padding-bottom: 0;">
+        <div class="container" style="max-width: 1140px;">
             <a href="/articles" class="back-link">&larr; Back to Articles</a>
             
             <div class="resource-detail-meta">Published: July 9, 2026</div>
             <h1 class="resource-detail-title">The Future of Real Estate: How Digital Twins Accelerate Sales and Break Geographical Borders</h1>
-            <div style="font-size: 1.05rem; color: var(--text-dark); margin-top: -15px; margin-bottom: 30px; font-weight: 500;">
-                Santiago Cadavid - Design Director | EX-VIZ
-            </div>
             
-            <!-- Image 1: Cover of the first part of the article -->
-            <div class="article-image-container" style="margin-top: 10px;">
+            <!-- Image 1: Cover of the article (Wide Header Image) -->
+            <div class="article-image-container" style="margin-top: 20px; margin-bottom: 40px;">
                 <img src="/media/articles/article1/1.png" alt="The future of Real Estate and Digital Twins" loading="lazy">
                 <div class="article-image-caption">EX-VIZ Real Estate Digital Twin Platform, integrating technical floorplans, pricing, and live inventory.</div>
             </div>
             
-            <div class="resource-detail-text">
-                <div class="article-lead-text">
-                    From static renderings to immersive experiences: technology and digitalization enable selling entire projects to investors worldwide
-                </div>
+            <!-- 2-Column Article Layout -->
+            <div class="article-layout-grid">
+                <!-- Author Sidebar (Right/Top) -->
+                <aside class="article-sidebar">
+                    <div class="author-card">
+                        <span class="author-label">Written by</span>
+                        <h4 class="author-name">Santiago Cadavid</h4>
+                        <p class="author-role">Design Director | EX-VIZ</p>
+                        
+                        <div class="author-contact-info">
+                            <div class="author-email-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <polyline points="2,4 12,13 22,4"></polyline>
+                                </svg>
+                                <a href="mailto:santiago.cadavid@ebedix.com">santiago.cadavid@ebedix.com</a>
+                            </div>
+                        </div>
+
+                        <a href="/contact" class="btn btn-primary author-contact-btn">
+                            Contact Author →
+                        </a>
+                    </div>
+                </aside>
+
+                <!-- Main Article Content (Left) -->
+                <div class="article-main-content">
+                    <div class="resource-detail-text">
+                        <div class="article-lead-text">
+                            From static renderings to immersive experiences: technology and digitalization enable selling entire projects to investors worldwide
+                        </div>
                 
                 <!-- Section 1: Introduction and Context -->
                 <div class="article-section-text">
@@ -144,67 +169,10 @@
                     <p>This disconnect is aggravated when we try to look at the project as a whole. A client does not only care about the interior of their apartment; they need to know where their property is located relative to the rest of the project. They want to understand which floor they will be on, where on the facade it is located and, crucially, what actual view they will have at sunrise or sunset. With traditional tools, answering this implies jumping to a facade plan, then to a tower layout diagram, and then to an aerial photograph taken with a drone. Once again, the experience is fragmented.</p>
                 </div>
                 
-                <!-- Interactive diagram showing fragmentation and disconnect -->
-                <div class="article-diagram">
-                    <div class="diagram-flow">
-                        <!-- Node 1 -->
-                        <div class="diagram-step diagram-step-user">
-                            <div class="step-pill green-pill">
-                                <span class="step-icon">👤</span>
-                                <span class="step-text">Interested client</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Connector lines -->
-                        <div class="diagram-split-lines"></div>
-                        
-                        <!-- Node 2 (Split row) -->
-                        <div class="diagram-split-row">
-                            <div class="split-pill">
-                                <span class="split-icon">📐</span>
-                                <span class="split-text">2D plans</span>
-                            </div>
-                            <div class="split-pill">
-                                <span class="split-icon">📦</span>
-                                <span class="split-text">Loose renders</span>
-                            </div>
-                            <div class="split-pill">
-                                <span class="split-icon">📄</span>
-                                <span class="split-text">Urban PDFs</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Dotted connectors -->
-                        <div class="diagram-merge-lines">
-                            <div class="merge-label">Disconnect</div>
-                        </div>
-                        
-                        <!-- Central downward flow -->
-                        <div class="diagram-step diagram-arrow-down-first-orange">
-                            <div class="step-pill orange-pill">
-                                <span class="step-icon">🧠</span>
-                                <span class="step-text">Cognitive overload &amp; spatial doubts</span>
-                            </div>
-                        </div>
-                        
-                        <div class="diagram-arrow-down">↓</div>
-                        
-                        <div class="diagram-step">
-                            <div class="step-pill orange-pill">
-                                <span class="step-icon">📊</span>
-                                <span class="step-text">Data mismatch (Outdated prices)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="diagram-arrow-down">↓</div>
-                        
-                        <div class="diagram-step">
-                            <div class="step-pill orange-pill">
-                                <span class="step-icon">❌</span>
-                                <span class="step-text">Assisted sale</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Diagram showing fragmentation and disconnect -->
+                <div class="article-image-container">
+                    <img src="/media/articles/article1/diagram.png" alt="Information fragmentation and buyer disconnect in traditional real estate sales" loading="lazy">
+                    <div class="article-image-caption">Flowchart diagram showing cognitive overload and information disconnect in traditional sales.</div>
                 </div>
 
                 <div class="article-section-text">
@@ -280,51 +248,203 @@
                     <p>In short, the integration of digital twins is no longer science fiction or a simple 'value add' aesthetic. It is the new standard. Firms and developers that adopt this technology will lead the market, speaking the language of certainty and transparency. Those who do not will continue trying to explain a three-dimensional world with paper plans.</p>
                 </div>
 
-                <!-- Image 5: Goes after the paragraph "In short, the integration..." -->
-                <div class="article-image-container">
-                    <img src="/media/articles/article1/5.png" alt="Integrated urban master plan representation of Meraki Serena del Mar" loading="lazy">
-                    <div class="article-image-caption">Interactive digital master plan recreation for Meraki in Serena del Mar, Cartagena.</div>
-                </div>
-
-                <!-- Contact Card / Channels -->
-                <div class="article-contact-card">
-                    <h3>Want to know more about EX-VIZ?</h3>
-                    <p>Connect with us, follow our channels, and share your thoughts! We are available for any inquiries or project discussions.</p>
-                    
-                    <div class="article-channels-grid">
-                        <div class="channel-item">
-                            <strong>Web:</strong> <br><a href="https://www.ex-viz.com" target="_blank" rel="noopener">www.ex-viz.com</a>
-                        </div>
-                        <div class="channel-item">
-                            <strong>LinkedIn:</strong> <br><a href="https://www.linkedin.com/company/ex-viz/" target="_blank" rel="noopener">EX-VIZ on LinkedIn</a>
-                        </div>
-                        <div class="channel-item">
-                            <strong>Instagram:</strong> <br><a href="https://www.instagram.com/exvizoficial/" target="_blank" rel="noopener">@exvizoficial</a>
-                        </div>
-                        <div class="channel-item">
-                            <strong>YouTube:</strong> <br><a href="https://www.youtube.com/@ex-viz" target="_blank" rel="noopener">EX-VIZ on YouTube</a>
-                        </div>
-                        <div class="channel-item">
-                            <strong>WhatsApp:</strong> <br><a href="https://wa.me/573332915577" target="_blank" rel="noopener">+57 333-291-5577</a>
-                        </div>
-                        <div class="channel-item">
-                            <strong>Email:</strong> <br><a href="mailto:info@ebedix.com">info@ebedix.com</a>
-                        </div>
+                <!-- Social Share Section -->
+                <div class="article-share-section">
+                    <span class="share-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="18" cy="5" r="3"></circle>
+                            <circle cx="6" cy="12" r="3"></circle>
+                            <circle cx="18" cy="19" r="3"></circle>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                        Share this article:
+                    </span>
+                    <div class="share-buttons">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://ex-viz.com/articles/future-real-estate-digital-twins" target="_blank" rel="noopener" class="share-btn share-linkedin" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=The%20Future%20of%20Real%20Estate&url=https://ex-viz.com/articles/future-real-estate-digital-twins" target="_blank" rel="noopener" class="share-btn share-twitter" aria-label="Share on X" title="Share on X (Twitter)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://ex-viz.com/articles/future-real-estate-digital-twins" target="_blank" rel="noopener" class="share-btn share-facebook" aria-label="Share on Facebook" title="Share on Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article:%20https://ex-viz.com/articles/future-real-estate-digital-twins" target="_blank" rel="noopener" class="share-btn share-whatsapp" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.023-5.116-2.887-6.98C16.576 1.897 14.1 1.07 11.469 1.07 6.03 1.07 1.607 5.491 1.602 10.932c-.001 1.639.429 3.238 1.248 4.678L1.83 20.25l4.817-1.261-.001.002zM17.472 14.4c-.3-.149-1.772-.874-2.047-.975-.276-.101-.476-.149-.676.15-.2.299-.775.975-.95 1.174-.175.199-.35.224-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.074-.175-.3-.019-.462.13-.611.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.2.05-.375-.025-.524-.075-.15-.676-1.625-.926-2.224-.244-.588-.49-.508-.676-.518-.174-.007-.375-.009-.575-.009-.2 0-.525.075-.8.374-.276.3-1.05 1.024-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.199 2.113 3.227 5.12 4.524.714.308 1.272.492 1.707.63.717.228 1.368.196 1.883.12.574-.085 1.772-.724 2.022-1.424.25-.699.25-1.299.175-1.424-.075-.125-.275-.199-.575-.349z"/></svg>
+                        </a>
+                        <button type="button" class="share-btn share-copy" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!');" aria-label="Copy Link" title="Copy Link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                        </button>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Contact Form Section -->
+    <section class="contact-page" style="padding-top: 30px; padding-bottom: 80px;">
+        <div class="container" style="max-width: 850px; margin: 0 auto;">
+
+            <!-- Intro Text -->
+            <div class="contact-intro-stacked" style="text-align: center; margin-bottom: 40px;">
+                <h2 class="contact-title" style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 16px;">Do you want to know more about The Future of Real Estate?</h2>
+                <div class="contact-divider" style="margin: 0 auto 24px auto;"></div>
+                <p class="contact-lead" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 0;">
+                    Whether you're at the concept stage or ready to launch, EX-VIZ can help you visualize, present, and
+                    sell your real estate development with world-class digital experiences. Tell us about your project
+                    and one of our specialists will be in touch shortly.
+                </p>
+            </div>
+
+            <!-- Form Panel Below -->
+            <section class="contact-form-panel">
+
+                <!-- Step indicators -->
+                <div class="form-steps">
+                    <div class="step-pill active" id="pill-1">
+                        <div class="step-num">1</div>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-pill pending" id="pill-2">
+                        <div class="step-num">2</div>
+                        <span>Contact Reason</span>
+                    </div>
+                </div>
+
+                <form id="contact-form" novalidate>
+
+                    <!-- Step 1: Contact Info -->
+                    <div class="form-step active" id="step-1">
+                        <h2 class="step-title">Your contact details</h2>
+                        <p class="step-sub">Please share your contact information so our team can reach you. We'll use
+                            email as the first point of contact.</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name <span class="req">*</span></label>
+                                <input type="text" id="first-name" name="firstName" placeholder="Jane"
+                                    autocomplete="given-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name <span class="req">*</span></label>
+                                <input type="text" id="last-name" name="lastName" placeholder="Doe"
+                                    autocomplete="family-name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number <span class="req">*</span></label>
+                            <div class="phone-row">
+                                <select id="phone-code" name="phoneCode" aria-label="Country code">
+                                    <option value="+1" selected>🇺🇸 +1 (US)</option>
+                                    <option value="+1-CA">🇨🇦 +1 (CA)</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+56">🇨🇱 +56</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+58">🇻🇪 +58</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                    <option value="+507">🇵🇦 +507</option>
+                                    <option value="+502">🇬🇹 +502</option>
+                                    <option value="+49">🇩🇪 +49</option>
+                                    <option value="+33">🇫🇷 +33</option>
+                                    <option value="+39">🇮🇹 +39</option>
+                                    <option value="+351">🇵🇹 +351</option>
+                                    <option value="+61">🇦🇺 +61</option>
+                                    <option value="+971">🇦🇪 +971</option>
+                                    <option value="+65">🇸🇬 +65</option>
+                                    <option value="+81">🇯🇵 +81</option>
+                                    <option value="+86">🇨🇳 +86</option>
+                                    <option value="+91">🇮🇳 +91</option>
+                                </select>
+                                <input type="tel" id="phone-number" name="phone" placeholder="300 123 4567"
+                                    autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="jane.doe@company.com"
+                                autocomplete="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company / Organization <span class="req">*</span></label>
+                            <input type="text" id="company" name="company" placeholder="Your Company Name"
+                                autocomplete="organization">
+                        </div>
+
+                        <div class="form-nav">
+                            <span></span>
+                            <button type="button" class="btn-next" id="btn-next">
+                                Continue <span>→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact Details -->
+                    <div class="form-step" id="step-2">
+                        <h2 class="step-title">How can we help you?</h2>
+                        <p class="step-sub">Select the reason for your contact and provide additional details so we can best address your request.</p>
+
+                        <div class="form-group">
+                            <label for="contact-reason">Reason for contact <span class="req">*</span></label>
+                            <select id="contact-reason" name="contactReason">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="Service requests">Service requests</option>
+                                <option value="Questions, complaints, claims and/or compliments">Questions, complaints, claims and/or compliments</option>
+                                <option value="General information about EBEDIX and its platforms (EX-View, EX-View Solar and EX-VIZ)">General information about EBEDIX and its platforms (EX-View, EX-View Solar and EX-VIZ)</option>
+                                <option value="Financial">Financial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-notes">Additional Details <span class="req">*</span></label>
+                            <textarea id="project-notes" name="projectNotes"
+                                placeholder="E.g. Please detail your request or inquiry here so we can provide an appropriate response..."></textarea>
+                        </div>
+
+                        <div class="form-nav">
+                            <button type="button" class="btn-prev" id="btn-prev">← Back</button>
+                            <button type="submit" class="btn-submit" id="btn-submit" data-label="Send Message">
+                                Send Message ✓
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- Success State -->
+                <div class="form-success" id="form-success">
+                    <div class="success-icon">✓</div>
+                    <h3 class="success-title">Message sent successfully!</h3>
+                    <p class="success-msg">Thank you for reaching out. A member of the EX-VIZ team will review your
+                        project and get back to you within 1–2 business days.</p>
+                    <a href="/" class="btn btn-outline btn-sm" style="margin-top:8px;">Back to Home</a>
+                </div>
+
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
-                <a href="/" class="footer-logo">
-                    <img src="/media/logoex-viz.webp" alt="EX-VIZ Logo" loading="lazy">
+                <a href="/es/" class="footer-logo">
+                    <img src="/media/logoex-viz.webp" alt="Logo EX-VIZ" loading="lazy">
                 </a>
                 <p class="brand-name">EX-VIZ</p>
-                <div class="social-links">
+                                <div class="social-links">
                     <a href="https://www.linkedin.com/company/ex-viz/" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -333,22 +453,21 @@
                     <a href="https://www.instagram.com/exvizoficial/" target="_blank" rel="noopener" aria-label="Instagram">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://www.youtube.com/@ex-viz" target="_blank" rel="noopener" aria-label="YouTube">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                    </svg>
-                </a>
-                <a href="https://wa.me/573332915577" target="_blank" rel="noopener" aria-label="WhatsApp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.023-5.116-2.887-6.98C16.576 1.897 14.1 1.07 11.469 1.07 6.03 1.07 1.607 5.491 1.602 10.932c-.001 1.639.429 3.238 1.248 4.678L1.83 20.25l4.817-1.261-.001.002zM17.472 14.4c-.3-.149-1.772-.874-2.047-.975-.276-.101-.476-.149-.676.15-.2.299-.775.975-.95 1.174-.175.199-.35.224-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.074-.175-.3-.019-.462.13-.611.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.2.05-.375-.025-.524-.075-.15-.676-1.625-.926-2.224-.244-.588-.49-.508-.676-.518-.174-.007-.375-.009-.575-.009-.2 0-.525.075-.8.374-.276.3-1.05 1.024-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.199 2.113 3.227 5.12 4.524.714.308 1.272.492 1.707.63.717.228 1.368.196 1.883.12.574-.085 1.772-.724 2.022-1.424.25-.699.25-1.299.175-1.424-.075-.125-.275-.199-.575-.349z"/>
-                    </svg>
-                </a>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@ex-viz" target="_blank" rel="noopener" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/573332915577" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.023-5.116-2.887-6.98C16.576 1.897 14.1 1.07 11.469 1.07 6.03 1.07 1.607 5.491 1.602 10.932c-.001 1.639.429 3.238 1.248 4.678L1.83 20.25l4.817-1.261-.001.002zM17.472 14.4c-.3-.149-1.772-.874-2.047-.975-.276-.101-.476-.149-.676.15-.2.299-.775.975-.95 1.174-.175.199-.35.224-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.775-1.665-2.074-.175-.3-.019-.462.13-.611.135-.133.3-.349.45-.523.15-.174.2-.299.3-.499.1-.2.05-.375-.025-.524-.075-.15-.676-1.625-.926-2.224-.244-.588-.49-.508-.676-.518-.174-.007-.375-.009-.575-.009-.2 0-.525.075-.8.374-.276.3-1.05 1.024-1.05 2.5 0 1.475 1.075 2.9 1.225 3.1.15.199 2.113 3.227 5.12 4.524.714.308 1.272.492 1.707.63.717.228 1.368.196 1.883.12.574-.085 1.772-.724 2.022-1.424.25-.699.25-1.299.175-1.424-.075-.125-.275-.199-.575-.349z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div class="container footer-grid">
             <div class="footer-col contact-col">
                 <div class="contact-item">
                     <span class="contact-icon">
@@ -367,7 +486,7 @@
                             <polyline points="2,4 12,13 22,4" />
                         </svg>
                     </span>
-                    <p>info@ebedix.com</p>
+                    <p>santiago.cadavid@ebedix.com</p>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">
@@ -392,6 +511,7 @@
 
     <!-- Scripts -->
     <script src="/js/script.js?v=1.1.0"></script>
+    <script src="/js/contact.js?v=1.1.0"></script>
 </body>
 
 </html>
